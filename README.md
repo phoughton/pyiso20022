@@ -1,7 +1,6 @@
-# Python Project Template for your projects
+# Message Generator
 
-Use as a template for python repos, just basics to support python development and testing.
-
+Generates classes to support message generation.
 
 ## Run the tests
 ```bash
