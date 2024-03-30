@@ -1,1 +1,5 @@
-generateDS -o pacs_008_001_12.py xsd/pacs.008.001.12.xsd
+
+#!/usr/bin/bash
+
+
+generateDS -o pacs_008_001_08.py xsd/pacs.008/pacs.008.001.08.xsd

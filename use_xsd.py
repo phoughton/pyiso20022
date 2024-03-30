@@ -1,16 +1,30 @@
-from pacs_008_001_12 import Document, FIToFICustomerCreditTransferV12
-from pacs_008_001_12 import GroupHeader113
+from pacs_008_001_08 import Document, FIToFICustomerCreditTransferV08
+from pacs_008_001_08 import GroupHeader93, SettlementInstruction7
+from pacs_008_001_08 import ClearingSystemIdentification2Choice
+
 
 # Create the root document element
 doc = Document()
 
-# Assume we're creating a single payment instruction
-top_level = FIToFICustomerCreditTransferV12()
+the_sttlinf = SettlementInstruction7()
+the_sttlinf.set_SttlmMtd("CLRG")
+the_sttlinf.set_ClrSys(ClearingSystemIdentification2Choice(Cd="STG"))
 
-top_level.set_GrpHdr(GrpHdr=GroupHeader113(MsgId="TheMessageId",
-                                           NbOfTxs=2))
+# Create the Group Header
+the_grp_header = GroupHeader93(MsgId="MIDTheMessageId",
+                               NbOfTxs=1,
+                               CreDtTm="2019-01-01T00:00:00",
+                               SttlmInf=the_sttlinf)
 
-doc.set_FIToFICstmrCdtTrf(top_level)
+the_fitc = FIToFICustomerCreditTransferV08()
+
+the_fitc.set_GrpHdr(the_grp_header)
+
+doc.set_FIToFICstmrCdtTrf(the_fitc)
+
+
 # Export to an XML file
 with open("payment_message.xml", "w") as xml_file:
     doc.export(xml_file, 0, name_='Document')
+
+
