@@ -5,6 +5,8 @@ from pacs_008_001_08 import CreditTransferTransaction39, PaymentIdentification7
 from pacs_008_001_08 import ActiveCurrencyAndAmount, Charges7
 from pacs_008_001_08 import BranchAndFinancialInstitutionIdentification6
 from pacs_008_001_08 import FinancialInstitutionIdentification18
+from pacs_008_001_08 import PartyIdentification135
+from pacs_008_001_08 import PostalAddress24
 import uuid
 
 
@@ -17,22 +19,31 @@ the_sttlinf.set_ClrSys(ClearingSystemIdentification2Choice(Cd="STG"))
 
 # Create the Group Header
 grp_header = GroupHeader93(MsgId="MIDTheMessageId",
-                               NbOfTxs=1,
-                               CreDtTm="2019-01-01T00:00:00",
-                               SttlmInf=the_sttlinf)
+                           NbOfTxs=1,
+                           CreDtTm="2019-01-01T00:00:00",
+                           SttlmInf=the_sttlinf)
 
 
 pmt_id = PaymentIdentification7(InstrId="IXWEDRFTGHJK5",
-                                   EndToEndId="E2EDRFGHJK7",
-                                   TxId="TIDRFGHJ54678",
-                                   UETR=uuid.uuid4())
+                                EndToEndId="E2EDRFGHJK7",
+                                TxId="TIDRFGHJ54678",
+                                UETR=uuid.uuid4())
 
 
 zero_amt = ActiveCurrencyAndAmount("GBP", 0)
 
-bic_1 = FinancialInstitutionIdentification18("BARCGB233L")
+bic_1 = FinancialInstitutionIdentification18("BARCGB22")
+bic_2 = FinancialInstitutionIdentification18("VODAGB23")
+
 agt = BranchAndFinancialInstitutionIdentification6(FinInstnId=bic_1)
 chrgs_inf = Charges7(Amt=zero_amt, Agt=agt)
+
+ult_pstl = PostalAddress24(BldgNb="10",
+                           StrtNm="Cheapside",
+                           TwnNm="London",
+                           Ctry="GB")
+ult_debtr = PartyIdentification135(Nm="Mr Ulti Debtor",
+                                   PstlAdr=ult_pstl)
 
 amt = ActiveCurrencyAndAmount("GBP", "555.01")
 cdtrtx = CreditTransferTransaction39(PmtId=pmt_id,
@@ -40,7 +51,10 @@ cdtrtx = CreditTransferTransaction39(PmtId=pmt_id,
                                      IntrBkSttlmDt="2019-01-01",
                                      IntrBkSttlmAmt=amt,
                                      InstdAmt=amt,
-                                     ChrgsInf=[chrgs_inf])
+                                     ChrgsInf=[chrgs_inf],
+                                     InstdAgt=bic_1,
+                                     InstgAgt=bic_2,
+                                     UltmtDbtr=ult_debtr)
 
 
 fit_to_fi_cust_cred_trans = FIToFICustomerCreditTransferV08()
