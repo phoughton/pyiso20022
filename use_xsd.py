@@ -1,12 +1,13 @@
-from pacs_008_001_08 import Document, FIToFICustomerCreditTransferV08
-from pacs_008_001_08 import GroupHeader93, SettlementInstruction7
-from pacs_008_001_08 import ClearingSystemIdentification2Choice
-from pacs_008_001_08 import CreditTransferTransaction39, PaymentIdentification7
-from pacs_008_001_08 import ActiveCurrencyAndAmount, Charges7
-from pacs_008_001_08 import BranchAndFinancialInstitutionIdentification6
-from pacs_008_001_08 import FinancialInstitutionIdentification18
-from pacs_008_001_08 import PartyIdentification135
-from pacs_008_001_08 import PostalAddress24
+# from pacs_008_001_08 import Document, FIToFICustomerCreditTransferV08
+# from pacs_008_001_08 import GroupHeader93, SettlementInstruction7
+# from pacs_008_001_08 import ClearingSystemIdentification2Choice
+# from pacs_008_001_08 import CreditTransferTransaction39, PaymentIdentification7
+# from pacs_008_001_08 import ActiveCurrencyAndAmount, Charges7
+# from pacs_008_001_08 import BranchAndFinancialInstitutionIdentification6
+# from pacs_008_001_08 import FinancialInstitutionIdentification18
+# from pacs_008_001_08 import PartyIdentification135
+# from pacs_008_001_08 import PostalAddress24
+from pacs_008_001_08 import *
 import uuid
 
 
@@ -45,6 +46,7 @@ ult_pstl = PostalAddress24(BldgNb="10",
 ult_debtr = PartyIdentification135(Nm="Mr Ulti Debtor",
                                    PstlAdr=ult_pstl)
 
+
 amt = ActiveCurrencyAndAmount("GBP", "555.01")
 cdtrtx = CreditTransferTransaction39(PmtId=pmt_id,
                                      ChrgBr="SHAR",
@@ -54,7 +56,8 @@ cdtrtx = CreditTransferTransaction39(PmtId=pmt_id,
                                      ChrgsInf=[chrgs_inf],
                                      InstdAgt=bic_1,
                                      InstgAgt=bic_2,
-                                     UltmtDbtr=ult_debtr)
+                                     UltmtDbtr=ult_debtr,
+                                     InitgPty=)
 
 
 fit_to_fi_cust_cred_trans = FIToFICustomerCreditTransferV08()

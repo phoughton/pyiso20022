@@ -2,17 +2,18 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Sat Mar 30 13:28:49 2024 by generateDS.py version 2.43.3.
+# Generated Sun Mar 31 15:11:15 2024 by generateDS.py version 2.43.3.
 # Python 3.11.4 (main, Jul  4 2023, 05:25:16) [GCC 12.2.0]
 #
 # Command line options:
+#   ('--member-specs', 'dict')
 #   ('-o', 'pacs_008_001_08.py')
 #
 # Command line arguments:
 #   xsd/pacs.008/pacs.008.001.08.xsd
 #
 # Command line:
-#   /home/vscode/.local/bin/generateDS -o "pacs_008_001_08.py" xsd/pacs.008/pacs.008.001.08.xsd
+#   /home/vscode/.local/bin/generateDS --member-specs="dict" -o "pacs_008_001_08.py" xsd/pacs.008/pacs.008.001.08.xsd
 #
 # Current working directory (os.getcwd()):
 #   msg_gen
@@ -1146,6 +1147,10 @@ class TaxRecordPeriod1Code(str, Enum):
 #
 class AccountIdentification4Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'IBAN': MemberSpec_('IBAN', ['IBAN2007Identifier', 'xs:string'], 0, 0, {'name': 'IBAN', 'type': 'xs:string'}, 1),
+        'Othr': MemberSpec_('Othr', 'GenericAccountIdentification1', 0, 0, {'name': 'Othr', 'type': 'GenericAccountIdentification1'}, 1),
+    }
     subclass = None
     superclass = None
     def __init__(self, IBAN=None, Othr=None, gds_collector_=None, **kwargs_):
@@ -1273,6 +1278,10 @@ class AccountIdentification4Choice(GeneratedsSuper):
 
 class AccountSchemeName1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalAccountIdentification1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 2),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 2),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -1425,6 +1434,10 @@ class AccountSchemeName1Choice(GeneratedsSuper):
 
 class ActiveCurrencyAndAmount(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Ccy': MemberSpec_('Ccy', 'ActiveCurrencyCode', 0, 0, {'use': 'required', 'name': 'Ccy'}),
+        'valueOf_': MemberSpec_('valueOf_', ['ActiveCurrencyAndAmount_SimpleType', 'xs:decimal'], 0),
+    }
     subclass = None
     superclass = None
     def __init__(self, Ccy=None, valueOf_=None, gds_collector_=None, **kwargs_):
@@ -1543,6 +1556,10 @@ class ActiveCurrencyAndAmount(GeneratedsSuper):
 
 class ActiveOrHistoricCurrencyAndAmount(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Ccy': MemberSpec_('Ccy', 'ActiveOrHistoricCurrencyCode', 0, 0, {'use': 'required', 'name': 'Ccy'}),
+        'valueOf_': MemberSpec_('valueOf_', ['ActiveOrHistoricCurrencyAndAmount_SimpleType', 'xs:decimal'], 0),
+    }
     subclass = None
     superclass = None
     def __init__(self, Ccy=None, valueOf_=None, gds_collector_=None, **kwargs_):
@@ -1661,6 +1678,10 @@ class ActiveOrHistoricCurrencyAndAmount(GeneratedsSuper):
 
 class AddressType3Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['AddressType2Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 3),
+        'Prtry': MemberSpec_('Prtry', 'GenericIdentification30', 0, 0, {'name': 'Prtry', 'type': 'GenericIdentification30'}, 3),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -1789,6 +1810,10 @@ class AddressType3Choice(GeneratedsSuper):
 
 class BranchAndFinancialInstitutionIdentification6(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'FinInstnId': MemberSpec_('FinInstnId', 'FinancialInstitutionIdentification18', 0, 0, {'name': 'FinInstnId', 'type': 'FinancialInstitutionIdentification18'}, None),
+        'BrnchId': MemberSpec_('BrnchId', 'BranchData3', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'BrnchId', 'type': 'BranchData3'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, FinInstnId=None, BrnchId=None, gds_collector_=None, **kwargs_):
@@ -1897,6 +1922,12 @@ class BranchAndFinancialInstitutionIdentification6(GeneratedsSuper):
 
 class BranchData3(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Id': MemberSpec_('Id', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Id', 'type': 'xs:string'}, None),
+        'LEI': MemberSpec_('LEI', ['LEIIdentifier', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'LEI', 'type': 'xs:string'}, None),
+        'Nm': MemberSpec_('Nm', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Nm', 'type': 'xs:string'}, None),
+        'PstlAdr': MemberSpec_('PstlAdr', 'PostalAddress24', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PstlAdr', 'type': 'PostalAddress24'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Id=None, LEI=None, Nm=None, PstlAdr=None, gds_collector_=None, **kwargs_):
@@ -2098,6 +2129,13 @@ class BranchData3(GeneratedsSuper):
 
 class CashAccount38(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Id': MemberSpec_('Id', 'AccountIdentification4Choice', 0, 0, {'name': 'Id', 'type': 'AccountIdentification4Choice'}, None),
+        'Tp': MemberSpec_('Tp', 'CashAccountType2Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'CashAccountType2Choice'}, None),
+        'Ccy': MemberSpec_('Ccy', ['ActiveOrHistoricCurrencyCode', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Ccy', 'type': 'xs:string'}, None),
+        'Nm': MemberSpec_('Nm', ['Max70Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Nm', 'type': 'xs:string'}, None),
+        'Prxy': MemberSpec_('Prxy', 'ProxyAccountIdentification1', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Prxy', 'type': 'ProxyAccountIdentification1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Id=None, Tp=None, Ccy=None, Nm=None, Prxy=None, gds_collector_=None, **kwargs_):
@@ -2292,6 +2330,10 @@ class CashAccount38(GeneratedsSuper):
 
 class CashAccountType2Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalCashAccountType1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 4),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 4),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -2444,6 +2486,10 @@ class CashAccountType2Choice(GeneratedsSuper):
 
 class CategoryPurpose1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalCategoryPurpose1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 5),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 5),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -2596,6 +2642,10 @@ class CategoryPurpose1Choice(GeneratedsSuper):
 
 class Charges7(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Amt': MemberSpec_('Amt', 'ActiveOrHistoricCurrencyAndAmount', 0, 0, {'name': 'Amt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'Agt': MemberSpec_('Agt', 'BranchAndFinancialInstitutionIdentification6', 0, 0, {'name': 'Agt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Amt=None, Agt=None, gds_collector_=None, **kwargs_):
@@ -2704,6 +2754,10 @@ class Charges7(GeneratedsSuper):
 
 class ClearingSystemIdentification2Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalClearingSystemIdentification1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 6),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 6),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -2856,6 +2910,10 @@ class ClearingSystemIdentification2Choice(GeneratedsSuper):
 
 class ClearingSystemIdentification3Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalCashClearingSystem1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 7),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 7),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -3008,6 +3066,10 @@ class ClearingSystemIdentification3Choice(GeneratedsSuper):
 
 class ClearingSystemMemberIdentification2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'ClrSysId': MemberSpec_('ClrSysId', 'ClearingSystemIdentification2Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'ClrSysId', 'type': 'ClearingSystemIdentification2Choice'}, None),
+        'MmbId': MemberSpec_('MmbId', ['Max35Text', 'xs:string'], 0, 0, {'name': 'MmbId', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, ClrSysId=None, MmbId=None, gds_collector_=None, **kwargs_):
@@ -3138,6 +3200,20 @@ class ClearingSystemMemberIdentification2(GeneratedsSuper):
 
 class Contact4(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'NmPrfx': MemberSpec_('NmPrfx', ['NamePrefix2Code', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'NmPrfx', 'type': 'xs:string'}, None),
+        'Nm': MemberSpec_('Nm', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Nm', 'type': 'xs:string'}, None),
+        'PhneNb': MemberSpec_('PhneNb', ['PhoneNumber', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PhneNb', 'type': 'xs:string'}, None),
+        'MobNb': MemberSpec_('MobNb', ['PhoneNumber', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'MobNb', 'type': 'xs:string'}, None),
+        'FaxNb': MemberSpec_('FaxNb', ['PhoneNumber', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'FaxNb', 'type': 'xs:string'}, None),
+        'EmailAdr': MemberSpec_('EmailAdr', ['Max2048Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'EmailAdr', 'type': 'xs:string'}, None),
+        'EmailPurp': MemberSpec_('EmailPurp', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'EmailPurp', 'type': 'xs:string'}, None),
+        'JobTitl': MemberSpec_('JobTitl', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'JobTitl', 'type': 'xs:string'}, None),
+        'Rspnsblty': MemberSpec_('Rspnsblty', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Rspnsblty', 'type': 'xs:string'}, None),
+        'Dept': MemberSpec_('Dept', ['Max70Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Dept', 'type': 'xs:string'}, None),
+        'Othr': MemberSpec_('Othr', 'OtherContact1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Othr', 'type': 'OtherContact1'}, None),
+        'PrefrdMtd': MemberSpec_('PrefrdMtd', ['PreferredContactMethod1Code', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PrefrdMtd', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, NmPrfx=None, Nm=None, PhneNb=None, MobNb=None, FaxNb=None, EmailAdr=None, EmailPurp=None, JobTitl=None, Rspnsblty=None, Dept=None, Othr=None, PrefrdMtd=None, gds_collector_=None, **kwargs_):
@@ -3572,6 +3648,54 @@ class Contact4(GeneratedsSuper):
 
 class CreditTransferTransaction39(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'PmtId': MemberSpec_('PmtId', 'PaymentIdentification7', 0, 0, {'name': 'PmtId', 'type': 'PaymentIdentification7'}, None),
+        'PmtTpInf': MemberSpec_('PmtTpInf', 'PaymentTypeInformation28', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PmtTpInf', 'type': 'PaymentTypeInformation28'}, None),
+        'IntrBkSttlmAmt': MemberSpec_('IntrBkSttlmAmt', 'ActiveCurrencyAndAmount', 0, 0, {'name': 'IntrBkSttlmAmt', 'type': 'ActiveCurrencyAndAmount'}, None),
+        'IntrBkSttlmDt': MemberSpec_('IntrBkSttlmDt', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'IntrBkSttlmDt', 'type': 'xs:date'}, None),
+        'SttlmPrty': MemberSpec_('SttlmPrty', ['Priority3Code', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SttlmPrty', 'type': 'xs:string'}, None),
+        'SttlmTmIndctn': MemberSpec_('SttlmTmIndctn', 'SettlementDateTimeIndication1', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SttlmTmIndctn', 'type': 'SettlementDateTimeIndication1'}, None),
+        'SttlmTmReq': MemberSpec_('SttlmTmReq', 'SettlementTimeRequest2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SttlmTmReq', 'type': 'SettlementTimeRequest2'}, None),
+        'AccptncDtTm': MemberSpec_('AccptncDtTm', ['ISODateTime', 'xs:dateTime'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'AccptncDtTm', 'type': 'xs:dateTime'}, None),
+        'PoolgAdjstmntDt': MemberSpec_('PoolgAdjstmntDt', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PoolgAdjstmntDt', 'type': 'xs:date'}, None),
+        'InstdAmt': MemberSpec_('InstdAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstdAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'XchgRate': MemberSpec_('XchgRate', ['BaseOneRate', 'xs:decimal'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'XchgRate', 'type': 'xs:decimal'}, None),
+        'ChrgBr': MemberSpec_('ChrgBr', ['ChargeBearerType1Code', 'xs:string'], 0, 0, {'name': 'ChrgBr', 'type': 'xs:string'}, None),
+        'ChrgsInf': MemberSpec_('ChrgsInf', 'Charges7', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'ChrgsInf', 'type': 'Charges7'}, None),
+        'PrvsInstgAgt1': MemberSpec_('PrvsInstgAgt1', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PrvsInstgAgt1', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'PrvsInstgAgt1Acct': MemberSpec_('PrvsInstgAgt1Acct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PrvsInstgAgt1Acct', 'type': 'CashAccount38'}, None),
+        'PrvsInstgAgt2': MemberSpec_('PrvsInstgAgt2', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PrvsInstgAgt2', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'PrvsInstgAgt2Acct': MemberSpec_('PrvsInstgAgt2Acct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PrvsInstgAgt2Acct', 'type': 'CashAccount38'}, None),
+        'PrvsInstgAgt3': MemberSpec_('PrvsInstgAgt3', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PrvsInstgAgt3', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'PrvsInstgAgt3Acct': MemberSpec_('PrvsInstgAgt3Acct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PrvsInstgAgt3Acct', 'type': 'CashAccount38'}, None),
+        'InstgAgt': MemberSpec_('InstgAgt', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstgAgt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'InstdAgt': MemberSpec_('InstdAgt', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstdAgt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'IntrmyAgt1': MemberSpec_('IntrmyAgt1', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'IntrmyAgt1', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'IntrmyAgt1Acct': MemberSpec_('IntrmyAgt1Acct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'IntrmyAgt1Acct', 'type': 'CashAccount38'}, None),
+        'IntrmyAgt2': MemberSpec_('IntrmyAgt2', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'IntrmyAgt2', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'IntrmyAgt2Acct': MemberSpec_('IntrmyAgt2Acct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'IntrmyAgt2Acct', 'type': 'CashAccount38'}, None),
+        'IntrmyAgt3': MemberSpec_('IntrmyAgt3', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'IntrmyAgt3', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'IntrmyAgt3Acct': MemberSpec_('IntrmyAgt3Acct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'IntrmyAgt3Acct', 'type': 'CashAccount38'}, None),
+        'UltmtDbtr': MemberSpec_('UltmtDbtr', 'PartyIdentification135', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'UltmtDbtr', 'type': 'PartyIdentification135'}, None),
+        'InitgPty': MemberSpec_('InitgPty', 'PartyIdentification135', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InitgPty', 'type': 'PartyIdentification135'}, None),
+        'Dbtr': MemberSpec_('Dbtr', 'PartyIdentification135', 0, 0, {'name': 'Dbtr', 'type': 'PartyIdentification135'}, None),
+        'DbtrAcct': MemberSpec_('DbtrAcct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'DbtrAcct', 'type': 'CashAccount38'}, None),
+        'DbtrAgt': MemberSpec_('DbtrAgt', 'BranchAndFinancialInstitutionIdentification6', 0, 0, {'name': 'DbtrAgt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'DbtrAgtAcct': MemberSpec_('DbtrAgtAcct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'DbtrAgtAcct', 'type': 'CashAccount38'}, None),
+        'CdtrAgt': MemberSpec_('CdtrAgt', 'BranchAndFinancialInstitutionIdentification6', 0, 0, {'name': 'CdtrAgt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'CdtrAgtAcct': MemberSpec_('CdtrAgtAcct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CdtrAgtAcct', 'type': 'CashAccount38'}, None),
+        'Cdtr': MemberSpec_('Cdtr', 'PartyIdentification135', 0, 0, {'name': 'Cdtr', 'type': 'PartyIdentification135'}, None),
+        'CdtrAcct': MemberSpec_('CdtrAcct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CdtrAcct', 'type': 'CashAccount38'}, None),
+        'UltmtCdtr': MemberSpec_('UltmtCdtr', 'PartyIdentification135', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'UltmtCdtr', 'type': 'PartyIdentification135'}, None),
+        'InstrForCdtrAgt': MemberSpec_('InstrForCdtrAgt', 'InstructionForCreditorAgent1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'InstrForCdtrAgt', 'type': 'InstructionForCreditorAgent1'}, None),
+        'InstrForNxtAgt': MemberSpec_('InstrForNxtAgt', 'InstructionForNextAgent1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'InstrForNxtAgt', 'type': 'InstructionForNextAgent1'}, None),
+        'Purp': MemberSpec_('Purp', 'Purpose2Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Purp', 'type': 'Purpose2Choice'}, None),
+        'RgltryRptg': MemberSpec_('RgltryRptg', 'RegulatoryReporting3', 1, 1, {'maxOccurs': '10', 'minOccurs': '0', 'name': 'RgltryRptg', 'type': 'RegulatoryReporting3'}, None),
+        'Tax': MemberSpec_('Tax', 'TaxInformation8', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tax', 'type': 'TaxInformation8'}, None),
+        'RltdRmtInf': MemberSpec_('RltdRmtInf', 'RemittanceLocation7', 1, 1, {'maxOccurs': '10', 'minOccurs': '0', 'name': 'RltdRmtInf', 'type': 'RemittanceLocation7'}, None),
+        'RmtInf': MemberSpec_('RmtInf', 'RemittanceInformation16', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RmtInf', 'type': 'RemittanceInformation16'}, None),
+        'SplmtryData': MemberSpec_('SplmtryData', 'SupplementaryData1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'SplmtryData', 'type': 'SupplementaryData1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, PmtId=None, PmtTpInf=None, IntrBkSttlmAmt=None, IntrBkSttlmDt=None, SttlmPrty=None, SttlmTmIndctn=None, SttlmTmReq=None, AccptncDtTm=None, PoolgAdjstmntDt=None, InstdAmt=None, XchgRate=None, ChrgBr=None, ChrgsInf=None, PrvsInstgAgt1=None, PrvsInstgAgt1Acct=None, PrvsInstgAgt2=None, PrvsInstgAgt2Acct=None, PrvsInstgAgt3=None, PrvsInstgAgt3Acct=None, InstgAgt=None, InstdAgt=None, IntrmyAgt1=None, IntrmyAgt1Acct=None, IntrmyAgt2=None, IntrmyAgt2Acct=None, IntrmyAgt3=None, IntrmyAgt3Acct=None, UltmtDbtr=None, InitgPty=None, Dbtr=None, DbtrAcct=None, DbtrAgt=None, DbtrAgtAcct=None, CdtrAgt=None, CdtrAgtAcct=None, Cdtr=None, CdtrAcct=None, UltmtCdtr=None, InstrForCdtrAgt=None, InstrForNxtAgt=None, Purp=None, RgltryRptg=None, Tax=None, RltdRmtInf=None, RmtInf=None, SplmtryData=None, gds_collector_=None, **kwargs_):
@@ -4493,6 +4617,10 @@ class CreditTransferTransaction39(GeneratedsSuper):
 
 class CreditorReferenceInformation2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Tp': MemberSpec_('Tp', 'CreditorReferenceType2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'CreditorReferenceType2'}, None),
+        'Ref': MemberSpec_('Ref', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Ref', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Tp=None, Ref=None, gds_collector_=None, **kwargs_):
@@ -4623,6 +4751,10 @@ class CreditorReferenceInformation2(GeneratedsSuper):
 
 class CreditorReferenceType1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['DocumentType3Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 8),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 8),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -4773,6 +4905,10 @@ class CreditorReferenceType1Choice(GeneratedsSuper):
 
 class CreditorReferenceType2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'CdOrPrtry': MemberSpec_('CdOrPrtry', 'CreditorReferenceType1Choice', 0, 0, {'name': 'CdOrPrtry', 'type': 'CreditorReferenceType1Choice'}, None),
+        'Issr': MemberSpec_('Issr', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Issr', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, CdOrPrtry=None, Issr=None, gds_collector_=None, **kwargs_):
@@ -4903,6 +5039,12 @@ class CreditorReferenceType2(GeneratedsSuper):
 
 class DateAndPlaceOfBirth1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'BirthDt': MemberSpec_('BirthDt', ['ISODate', 'xs:date'], 0, 0, {'name': 'BirthDt', 'type': 'xs:date'}, None),
+        'PrvcOfBirth': MemberSpec_('PrvcOfBirth', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PrvcOfBirth', 'type': 'xs:string'}, None),
+        'CityOfBirth': MemberSpec_('CityOfBirth', ['Max35Text', 'xs:string'], 0, 0, {'name': 'CityOfBirth', 'type': 'xs:string'}, None),
+        'CtryOfBirth': MemberSpec_('CtryOfBirth', ['CountryCode', 'xs:string'], 0, 0, {'name': 'CtryOfBirth', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, BirthDt=None, PrvcOfBirth=None, CityOfBirth=None, CtryOfBirth=None, gds_collector_=None, **kwargs_):
@@ -5104,6 +5246,10 @@ class DateAndPlaceOfBirth1(GeneratedsSuper):
 
 class DatePeriod2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'FrDt': MemberSpec_('FrDt', ['ISODate', 'xs:date'], 0, 0, {'name': 'FrDt', 'type': 'xs:date'}, None),
+        'ToDt': MemberSpec_('ToDt', ['ISODate', 'xs:date'], 0, 0, {'name': 'ToDt', 'type': 'xs:date'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, FrDt=None, ToDt=None, gds_collector_=None, **kwargs_):
@@ -5236,6 +5382,10 @@ class DatePeriod2(GeneratedsSuper):
 
 class DiscountAmountAndType1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Tp': MemberSpec_('Tp', 'DiscountAmountType1Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'DiscountAmountType1Choice'}, None),
+        'Amt': MemberSpec_('Amt', 'ActiveOrHistoricCurrencyAndAmount', 0, 0, {'name': 'Amt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Tp=None, Amt=None, gds_collector_=None, **kwargs_):
@@ -5344,6 +5494,10 @@ class DiscountAmountAndType1(GeneratedsSuper):
 
 class DiscountAmountType1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalDiscountAmountType1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 9),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 9),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -5496,6 +5650,9 @@ class DiscountAmountType1Choice(GeneratedsSuper):
 
 class Document(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'FIToFICstmrCdtTrf': MemberSpec_('FIToFICstmrCdtTrf', 'FIToFICustomerCreditTransferV08', 0, 0, {'name': 'FIToFICstmrCdtTrf', 'type': 'FIToFICustomerCreditTransferV08'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, FIToFICstmrCdtTrf=None, gds_collector_=None, **kwargs_):
@@ -5589,6 +5746,12 @@ class Document(GeneratedsSuper):
 
 class DocumentAdjustment1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Amt': MemberSpec_('Amt', 'ActiveOrHistoricCurrencyAndAmount', 0, 0, {'name': 'Amt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'CdtDbtInd': MemberSpec_('CdtDbtInd', ['CreditDebitCode', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CdtDbtInd', 'type': 'xs:string'}, None),
+        'Rsn': MemberSpec_('Rsn', ['Max4Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Rsn', 'type': 'xs:string'}, None),
+        'AddtlInf': MemberSpec_('AddtlInf', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'AddtlInf', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Amt=None, CdtDbtInd=None, Rsn=None, AddtlInf=None, gds_collector_=None, **kwargs_):
@@ -5791,6 +5954,11 @@ class DocumentAdjustment1(GeneratedsSuper):
 
 class DocumentLineIdentification1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Tp': MemberSpec_('Tp', 'DocumentLineType1', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'DocumentLineType1'}, None),
+        'Nb': MemberSpec_('Nb', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Nb', 'type': 'xs:string'}, None),
+        'RltdDt': MemberSpec_('RltdDt', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RltdDt', 'type': 'xs:date'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Tp=None, Nb=None, RltdDt=None, gds_collector_=None, **kwargs_):
@@ -5953,6 +6121,11 @@ class DocumentLineIdentification1(GeneratedsSuper):
 
 class DocumentLineInformation1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Id': MemberSpec_('Id', 'DocumentLineIdentification1', 1, 0, {'maxOccurs': 'unbounded', 'minOccurs': '1', 'name': 'Id', 'type': 'DocumentLineIdentification1'}, None),
+        'Desc': MemberSpec_('Desc', ['Max2048Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Desc', 'type': 'xs:string'}, None),
+        'Amt': MemberSpec_('Amt', 'RemittanceAmount3', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Amt', 'type': 'RemittanceAmount3'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Id=None, Desc=None, Amt=None, gds_collector_=None, **kwargs_):
@@ -6107,6 +6280,10 @@ class DocumentLineInformation1(GeneratedsSuper):
 
 class DocumentLineType1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'CdOrPrtry': MemberSpec_('CdOrPrtry', 'DocumentLineType1Choice', 0, 0, {'name': 'CdOrPrtry', 'type': 'DocumentLineType1Choice'}, None),
+        'Issr': MemberSpec_('Issr', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Issr', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, CdOrPrtry=None, Issr=None, gds_collector_=None, **kwargs_):
@@ -6237,6 +6414,10 @@ class DocumentLineType1(GeneratedsSuper):
 
 class DocumentLineType1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalDocumentLineType1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 10),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 10),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -6389,6 +6570,11 @@ class DocumentLineType1Choice(GeneratedsSuper):
 
 class FIToFICustomerCreditTransferV08(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'GrpHdr': MemberSpec_('GrpHdr', 'GroupHeader93', 0, 0, {'name': 'GrpHdr', 'type': 'GroupHeader93'}, None),
+        'CdtTrfTxInf': MemberSpec_('CdtTrfTxInf', 'CreditTransferTransaction39', 1, 0, {'maxOccurs': 'unbounded', 'minOccurs': '1', 'name': 'CdtTrfTxInf', 'type': 'CreditTransferTransaction39'}, None),
+        'SplmtryData': MemberSpec_('SplmtryData', 'SupplementaryData1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'SplmtryData', 'type': 'SupplementaryData1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, GrpHdr=None, CdtTrfTxInf=None, SplmtryData=None, gds_collector_=None, **kwargs_):
@@ -6530,6 +6716,10 @@ class FIToFICustomerCreditTransferV08(GeneratedsSuper):
 
 class FinancialIdentificationSchemeName1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalFinancialInstitutionIdentification1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 11),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 11),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -6682,6 +6872,14 @@ class FinancialIdentificationSchemeName1Choice(GeneratedsSuper):
 
 class FinancialInstitutionIdentification18(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'BICFI': MemberSpec_('BICFI', ['BICFIDec2014Identifier', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'BICFI', 'type': 'xs:string'}, None),
+        'ClrSysMmbId': MemberSpec_('ClrSysMmbId', 'ClearingSystemMemberIdentification2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'ClrSysMmbId', 'type': 'ClearingSystemMemberIdentification2'}, None),
+        'LEI': MemberSpec_('LEI', ['LEIIdentifier', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'LEI', 'type': 'xs:string'}, None),
+        'Nm': MemberSpec_('Nm', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Nm', 'type': 'xs:string'}, None),
+        'PstlAdr': MemberSpec_('PstlAdr', 'PostalAddress24', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PstlAdr', 'type': 'PostalAddress24'}, None),
+        'Othr': MemberSpec_('Othr', 'GenericFinancialIdentification1', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Othr', 'type': 'GenericFinancialIdentification1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, BICFI=None, ClrSysMmbId=None, LEI=None, Nm=None, PstlAdr=None, Othr=None, gds_collector_=None, **kwargs_):
@@ -6910,6 +7108,16 @@ class FinancialInstitutionIdentification18(GeneratedsSuper):
 
 class Garnishment3(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Tp': MemberSpec_('Tp', 'GarnishmentType1', 0, 0, {'name': 'Tp', 'type': 'GarnishmentType1'}, None),
+        'Grnshee': MemberSpec_('Grnshee', 'PartyIdentification135', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Grnshee', 'type': 'PartyIdentification135'}, None),
+        'GrnshmtAdmstr': MemberSpec_('GrnshmtAdmstr', 'PartyIdentification135', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'GrnshmtAdmstr', 'type': 'PartyIdentification135'}, None),
+        'RefNb': MemberSpec_('RefNb', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RefNb', 'type': 'xs:string'}, None),
+        'Dt': MemberSpec_('Dt', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Dt', 'type': 'xs:date'}, None),
+        'RmtdAmt': MemberSpec_('RmtdAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RmtdAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'FmlyMdclInsrncInd': MemberSpec_('FmlyMdclInsrncInd', ['TrueFalseIndicator', 'xs:boolean'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'FmlyMdclInsrncInd', 'type': 'xs:boolean'}, None),
+        'MplyeeTermntnInd': MemberSpec_('MplyeeTermntnInd', ['TrueFalseIndicator', 'xs:boolean'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'MplyeeTermntnInd', 'type': 'xs:boolean'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Tp=None, Grnshee=None, GrnshmtAdmstr=None, RefNb=None, Dt=None, RmtdAmt=None, FmlyMdclInsrncInd=None, MplyeeTermntnInd=None, gds_collector_=None, **kwargs_):
@@ -7163,6 +7371,10 @@ class Garnishment3(GeneratedsSuper):
 
 class GarnishmentType1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'CdOrPrtry': MemberSpec_('CdOrPrtry', 'GarnishmentType1Choice', 0, 0, {'name': 'CdOrPrtry', 'type': 'GarnishmentType1Choice'}, None),
+        'Issr': MemberSpec_('Issr', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Issr', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, CdOrPrtry=None, Issr=None, gds_collector_=None, **kwargs_):
@@ -7293,6 +7505,10 @@ class GarnishmentType1(GeneratedsSuper):
 
 class GarnishmentType1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalGarnishmentType1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 12),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 12),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -7445,6 +7661,11 @@ class GarnishmentType1Choice(GeneratedsSuper):
 
 class GenericAccountIdentification1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Id': MemberSpec_('Id', ['Max34Text', 'xs:string'], 0, 0, {'name': 'Id', 'type': 'xs:string'}, None),
+        'SchmeNm': MemberSpec_('SchmeNm', 'AccountSchemeName1Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SchmeNm', 'type': 'AccountSchemeName1Choice'}, None),
+        'Issr': MemberSpec_('Issr', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Issr', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Id=None, SchmeNm=None, Issr=None, gds_collector_=None, **kwargs_):
@@ -7612,6 +7833,11 @@ class GenericAccountIdentification1(GeneratedsSuper):
 
 class GenericFinancialIdentification1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Id': MemberSpec_('Id', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Id', 'type': 'xs:string'}, None),
+        'SchmeNm': MemberSpec_('SchmeNm', 'FinancialIdentificationSchemeName1Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SchmeNm', 'type': 'FinancialIdentificationSchemeName1Choice'}, None),
+        'Issr': MemberSpec_('Issr', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Issr', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Id=None, SchmeNm=None, Issr=None, gds_collector_=None, **kwargs_):
@@ -7762,6 +7988,11 @@ class GenericFinancialIdentification1(GeneratedsSuper):
 
 class GenericIdentification30(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Id': MemberSpec_('Id', ['Exact4AlphaNumericText', 'xs:string'], 0, 0, {'name': 'Id', 'type': 'xs:string'}, None),
+        'Issr': MemberSpec_('Issr', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Issr', 'type': 'xs:string'}, None),
+        'SchmeNm': MemberSpec_('SchmeNm', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SchmeNm', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Id=None, Issr=None, SchmeNm=None, gds_collector_=None, **kwargs_):
@@ -7931,6 +8162,11 @@ class GenericIdentification30(GeneratedsSuper):
 
 class GenericOrganisationIdentification1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Id': MemberSpec_('Id', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Id', 'type': 'xs:string'}, None),
+        'SchmeNm': MemberSpec_('SchmeNm', 'OrganisationIdentificationSchemeName1Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SchmeNm', 'type': 'OrganisationIdentificationSchemeName1Choice'}, None),
+        'Issr': MemberSpec_('Issr', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Issr', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Id=None, SchmeNm=None, Issr=None, gds_collector_=None, **kwargs_):
@@ -8081,6 +8317,11 @@ class GenericOrganisationIdentification1(GeneratedsSuper):
 
 class GenericPersonIdentification1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Id': MemberSpec_('Id', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Id', 'type': 'xs:string'}, None),
+        'SchmeNm': MemberSpec_('SchmeNm', 'PersonIdentificationSchemeName1Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SchmeNm', 'type': 'PersonIdentificationSchemeName1Choice'}, None),
+        'Issr': MemberSpec_('Issr', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Issr', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Id=None, SchmeNm=None, Issr=None, gds_collector_=None, **kwargs_):
@@ -8231,6 +8472,19 @@ class GenericPersonIdentification1(GeneratedsSuper):
 
 class GroupHeader93(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'MsgId': MemberSpec_('MsgId', ['Max35Text', 'xs:string'], 0, 0, {'name': 'MsgId', 'type': 'xs:string'}, None),
+        'CreDtTm': MemberSpec_('CreDtTm', ['ISODateTime', 'xs:dateTime'], 0, 0, {'name': 'CreDtTm', 'type': 'xs:dateTime'}, None),
+        'BtchBookg': MemberSpec_('BtchBookg', ['BatchBookingIndicator', 'xs:boolean'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'BtchBookg', 'type': 'xs:boolean'}, None),
+        'NbOfTxs': MemberSpec_('NbOfTxs', ['Max15NumericText', 'xs:string'], 0, 0, {'name': 'NbOfTxs', 'type': 'xs:string'}, None),
+        'CtrlSum': MemberSpec_('CtrlSum', ['DecimalNumber', 'xs:decimal'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CtrlSum', 'type': 'xs:decimal'}, None),
+        'TtlIntrBkSttlmAmt': MemberSpec_('TtlIntrBkSttlmAmt', 'ActiveCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TtlIntrBkSttlmAmt', 'type': 'ActiveCurrencyAndAmount'}, None),
+        'IntrBkSttlmDt': MemberSpec_('IntrBkSttlmDt', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'IntrBkSttlmDt', 'type': 'xs:date'}, None),
+        'SttlmInf': MemberSpec_('SttlmInf', 'SettlementInstruction7', 0, 0, {'name': 'SttlmInf', 'type': 'SettlementInstruction7'}, None),
+        'PmtTpInf': MemberSpec_('PmtTpInf', 'PaymentTypeInformation28', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PmtTpInf', 'type': 'PaymentTypeInformation28'}, None),
+        'InstgAgt': MemberSpec_('InstgAgt', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstgAgt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'InstdAgt': MemberSpec_('InstdAgt', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstdAgt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, MsgId=None, CreDtTm=None, BtchBookg=None, NbOfTxs=None, CtrlSum=None, TtlIntrBkSttlmAmt=None, IntrBkSttlmDt=None, SttlmInf=None, PmtTpInf=None, InstgAgt=None, InstdAgt=None, gds_collector_=None, **kwargs_):
@@ -8578,6 +8832,10 @@ class GroupHeader93(GeneratedsSuper):
 
 class InstructionForCreditorAgent1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['Instruction3Code', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Cd', 'type': 'xs:string'}, None),
+        'InstrInf': MemberSpec_('InstrInf', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstrInf', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, InstrInf=None, gds_collector_=None, **kwargs_):
@@ -8728,6 +8986,10 @@ class InstructionForCreditorAgent1(GeneratedsSuper):
 
 class InstructionForNextAgent1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['Instruction4Code', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Cd', 'type': 'xs:string'}, None),
+        'InstrInf': MemberSpec_('InstrInf', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstrInf', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, InstrInf=None, gds_collector_=None, **kwargs_):
@@ -8878,6 +9140,10 @@ class InstructionForNextAgent1(GeneratedsSuper):
 
 class LocalInstrument2Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalLocalInstrument1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 13),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 13),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -9030,6 +9296,10 @@ class LocalInstrument2Choice(GeneratedsSuper):
 
 class NameAndAddress16(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Nm': MemberSpec_('Nm', ['Max140Text', 'xs:string'], 0, 0, {'name': 'Nm', 'type': 'xs:string'}, None),
+        'Adr': MemberSpec_('Adr', 'PostalAddress24', 0, 0, {'name': 'Adr', 'type': 'PostalAddress24'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Nm=None, Adr=None, gds_collector_=None, **kwargs_):
@@ -9160,6 +9430,11 @@ class NameAndAddress16(GeneratedsSuper):
 
 class OrganisationIdentification29(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'AnyBIC': MemberSpec_('AnyBIC', ['AnyBICDec2014Identifier', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'AnyBIC', 'type': 'xs:string'}, None),
+        'LEI': MemberSpec_('LEI', ['LEIIdentifier', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'LEI', 'type': 'xs:string'}, None),
+        'Othr': MemberSpec_('Othr', 'GenericOrganisationIdentification1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Othr', 'type': 'GenericOrganisationIdentification1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, AnyBIC=None, LEI=None, Othr=None, gds_collector_=None, **kwargs_):
@@ -9330,6 +9605,10 @@ class OrganisationIdentification29(GeneratedsSuper):
 
 class OrganisationIdentificationSchemeName1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalOrganisationIdentification1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 14),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 14),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -9482,6 +9761,10 @@ class OrganisationIdentificationSchemeName1Choice(GeneratedsSuper):
 
 class OtherContact1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'ChanlTp': MemberSpec_('ChanlTp', ['Max4Text', 'xs:string'], 0, 0, {'name': 'ChanlTp', 'type': 'xs:string'}, None),
+        'Id': MemberSpec_('Id', ['Max128Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Id', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, ChanlTp=None, Id=None, gds_collector_=None, **kwargs_):
@@ -9634,6 +9917,10 @@ class OtherContact1(GeneratedsSuper):
 
 class Party38Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'OrgId': MemberSpec_('OrgId', 'OrganisationIdentification29', 0, 0, {'name': 'OrgId', 'type': 'OrganisationIdentification29'}, 15),
+        'PrvtId': MemberSpec_('PrvtId', 'PersonIdentification13', 0, 0, {'name': 'PrvtId', 'type': 'PersonIdentification13'}, 15),
+    }
     subclass = None
     superclass = None
     def __init__(self, OrgId=None, PrvtId=None, gds_collector_=None, **kwargs_):
@@ -9742,6 +10029,13 @@ class Party38Choice(GeneratedsSuper):
 
 class PartyIdentification135(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Nm': MemberSpec_('Nm', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Nm', 'type': 'xs:string'}, None),
+        'PstlAdr': MemberSpec_('PstlAdr', 'PostalAddress24', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PstlAdr', 'type': 'PostalAddress24'}, None),
+        'Id': MemberSpec_('Id', 'Party38Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Id', 'type': 'Party38Choice'}, None),
+        'CtryOfRes': MemberSpec_('CtryOfRes', ['CountryCode', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CtryOfRes', 'type': 'xs:string'}, None),
+        'CtctDtls': MemberSpec_('CtctDtls', 'Contact4', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CtctDtls', 'type': 'Contact4'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Nm=None, PstlAdr=None, Id=None, CtryOfRes=None, CtctDtls=None, gds_collector_=None, **kwargs_):
@@ -9936,6 +10230,13 @@ class PartyIdentification135(GeneratedsSuper):
 
 class PaymentIdentification7(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'InstrId': MemberSpec_('InstrId', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstrId', 'type': 'xs:string'}, None),
+        'EndToEndId': MemberSpec_('EndToEndId', ['Max35Text', 'xs:string'], 0, 0, {'name': 'EndToEndId', 'type': 'xs:string'}, None),
+        'TxId': MemberSpec_('TxId', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TxId', 'type': 'xs:string'}, None),
+        'UETR': MemberSpec_('UETR', ['UUIDv4Identifier', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'UETR', 'type': 'xs:string'}, None),
+        'ClrSysRef': MemberSpec_('ClrSysRef', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'ClrSysRef', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, InstrId=None, EndToEndId=None, TxId=None, UETR=None, ClrSysRef=None, gds_collector_=None, **kwargs_):
@@ -10145,6 +10446,13 @@ class PaymentIdentification7(GeneratedsSuper):
 
 class PaymentTypeInformation28(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'InstrPrty': MemberSpec_('InstrPrty', ['Priority2Code', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstrPrty', 'type': 'xs:string'}, None),
+        'ClrChanl': MemberSpec_('ClrChanl', ['ClearingChannel2Code', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'ClrChanl', 'type': 'xs:string'}, None),
+        'SvcLvl': MemberSpec_('SvcLvl', 'ServiceLevel8Choice', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'SvcLvl', 'type': 'ServiceLevel8Choice'}, None),
+        'LclInstrm': MemberSpec_('LclInstrm', 'LocalInstrument2Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'LclInstrm', 'type': 'LocalInstrument2Choice'}, None),
+        'CtgyPurp': MemberSpec_('CtgyPurp', 'CategoryPurpose1Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CtgyPurp', 'type': 'CategoryPurpose1Choice'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, InstrPrty=None, ClrChanl=None, SvcLvl=None, LclInstrm=None, CtgyPurp=None, gds_collector_=None, **kwargs_):
@@ -10347,6 +10655,10 @@ class PaymentTypeInformation28(GeneratedsSuper):
 
 class PersonIdentification13(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'DtAndPlcOfBirth': MemberSpec_('DtAndPlcOfBirth', 'DateAndPlaceOfBirth1', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'DtAndPlcOfBirth', 'type': 'DateAndPlaceOfBirth1'}, None),
+        'Othr': MemberSpec_('Othr', 'GenericPersonIdentification1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Othr', 'type': 'GenericPersonIdentification1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, DtAndPlcOfBirth=None, Othr=None, gds_collector_=None, **kwargs_):
@@ -10464,6 +10776,10 @@ class PersonIdentification13(GeneratedsSuper):
 
 class PersonIdentificationSchemeName1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalPersonIdentification1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 16),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 16),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -10616,6 +10932,24 @@ class PersonIdentificationSchemeName1Choice(GeneratedsSuper):
 
 class PostalAddress24(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'AdrTp': MemberSpec_('AdrTp', 'AddressType3Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'AdrTp', 'type': 'AddressType3Choice'}, None),
+        'Dept': MemberSpec_('Dept', ['Max70Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Dept', 'type': 'xs:string'}, None),
+        'SubDept': MemberSpec_('SubDept', ['Max70Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SubDept', 'type': 'xs:string'}, None),
+        'StrtNm': MemberSpec_('StrtNm', ['Max70Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'StrtNm', 'type': 'xs:string'}, None),
+        'BldgNb': MemberSpec_('BldgNb', ['Max16Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'BldgNb', 'type': 'xs:string'}, None),
+        'BldgNm': MemberSpec_('BldgNm', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'BldgNm', 'type': 'xs:string'}, None),
+        'Flr': MemberSpec_('Flr', ['Max70Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Flr', 'type': 'xs:string'}, None),
+        'PstBx': MemberSpec_('PstBx', ['Max16Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PstBx', 'type': 'xs:string'}, None),
+        'Room': MemberSpec_('Room', ['Max70Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Room', 'type': 'xs:string'}, None),
+        'PstCd': MemberSpec_('PstCd', ['Max16Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PstCd', 'type': 'xs:string'}, None),
+        'TwnNm': MemberSpec_('TwnNm', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TwnNm', 'type': 'xs:string'}, None),
+        'TwnLctnNm': MemberSpec_('TwnLctnNm', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TwnLctnNm', 'type': 'xs:string'}, None),
+        'DstrctNm': MemberSpec_('DstrctNm', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'DstrctNm', 'type': 'xs:string'}, None),
+        'CtrySubDvsn': MemberSpec_('CtrySubDvsn', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CtrySubDvsn', 'type': 'xs:string'}, None),
+        'Ctry': MemberSpec_('Ctry', ['CountryCode', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Ctry', 'type': 'xs:string'}, None),
+        'AdrLine': MemberSpec_('AdrLine', ['Max70Text', 'xs:string'], 1, 1, {'maxOccurs': '7', 'minOccurs': '0', 'name': 'AdrLine', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, AdrTp=None, Dept=None, SubDept=None, StrtNm=None, BldgNb=None, BldgNm=None, Flr=None, PstBx=None, Room=None, PstCd=None, TwnNm=None, TwnLctnNm=None, DstrctNm=None, CtrySubDvsn=None, Ctry=None, AdrLine=None, gds_collector_=None, **kwargs_):
@@ -11082,6 +11416,10 @@ class PostalAddress24(GeneratedsSuper):
 
 class ProxyAccountIdentification1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Tp': MemberSpec_('Tp', 'ProxyAccountType1Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'ProxyAccountType1Choice'}, None),
+        'Id': MemberSpec_('Id', ['Max2048Text', 'xs:string'], 0, 0, {'name': 'Id', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Tp=None, Id=None, gds_collector_=None, **kwargs_):
@@ -11212,6 +11550,10 @@ class ProxyAccountIdentification1(GeneratedsSuper):
 
 class ProxyAccountType1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalProxyAccountType1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 17),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 17),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -11364,6 +11706,10 @@ class ProxyAccountType1Choice(GeneratedsSuper):
 
 class Purpose2Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalPurpose1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 18),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 18),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -11516,6 +11862,12 @@ class Purpose2Choice(GeneratedsSuper):
 
 class ReferredDocumentInformation7(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Tp': MemberSpec_('Tp', 'ReferredDocumentType4', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'ReferredDocumentType4'}, None),
+        'Nb': MemberSpec_('Nb', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Nb', 'type': 'xs:string'}, None),
+        'RltdDt': MemberSpec_('RltdDt', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RltdDt', 'type': 'xs:date'}, None),
+        'LineDtls': MemberSpec_('LineDtls', 'DocumentLineInformation1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'LineDtls', 'type': 'DocumentLineInformation1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Tp=None, Nb=None, RltdDt=None, LineDtls=None, gds_collector_=None, **kwargs_):
@@ -11702,6 +12054,10 @@ class ReferredDocumentInformation7(GeneratedsSuper):
 
 class ReferredDocumentType3Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['DocumentType6Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 19),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 19),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -11852,6 +12208,10 @@ class ReferredDocumentType3Choice(GeneratedsSuper):
 
 class ReferredDocumentType4(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'CdOrPrtry': MemberSpec_('CdOrPrtry', 'ReferredDocumentType3Choice', 0, 0, {'name': 'CdOrPrtry', 'type': 'ReferredDocumentType3Choice'}, None),
+        'Issr': MemberSpec_('Issr', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Issr', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, CdOrPrtry=None, Issr=None, gds_collector_=None, **kwargs_):
@@ -11982,6 +12342,10 @@ class ReferredDocumentType4(GeneratedsSuper):
 
 class RegulatoryAuthority2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Nm': MemberSpec_('Nm', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Nm', 'type': 'xs:string'}, None),
+        'Ctry': MemberSpec_('Ctry', ['CountryCode', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Ctry', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Nm=None, Ctry=None, gds_collector_=None, **kwargs_):
@@ -12131,6 +12495,11 @@ class RegulatoryAuthority2(GeneratedsSuper):
 
 class RegulatoryReporting3(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'DbtCdtRptgInd': MemberSpec_('DbtCdtRptgInd', ['RegulatoryReportingType1Code', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'DbtCdtRptgInd', 'type': 'xs:string'}, None),
+        'Authrty': MemberSpec_('Authrty', 'RegulatoryAuthority2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Authrty', 'type': 'RegulatoryAuthority2'}, None),
+        'Dtls': MemberSpec_('Dtls', 'StructuredRegulatoryReporting3', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Dtls', 'type': 'StructuredRegulatoryReporting3'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, DbtCdtRptgInd=None, Authrty=None, Dtls=None, gds_collector_=None, **kwargs_):
@@ -12283,6 +12652,14 @@ class RegulatoryReporting3(GeneratedsSuper):
 
 class RemittanceAmount2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'DuePyblAmt': MemberSpec_('DuePyblAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'DuePyblAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'DscntApldAmt': MemberSpec_('DscntApldAmt', 'DiscountAmountAndType1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'DscntApldAmt', 'type': 'DiscountAmountAndType1'}, None),
+        'CdtNoteAmt': MemberSpec_('CdtNoteAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CdtNoteAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'TaxAmt': MemberSpec_('TaxAmt', 'TaxAmountAndType1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'TaxAmt', 'type': 'TaxAmountAndType1'}, None),
+        'AdjstmntAmtAndRsn': MemberSpec_('AdjstmntAmtAndRsn', 'DocumentAdjustment1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'AdjstmntAmtAndRsn', 'type': 'DocumentAdjustment1'}, None),
+        'RmtdAmt': MemberSpec_('RmtdAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RmtdAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, DuePyblAmt=None, DscntApldAmt=None, CdtNoteAmt=None, TaxAmt=None, AdjstmntAmtAndRsn=None, RmtdAmt=None, gds_collector_=None, **kwargs_):
@@ -12478,6 +12855,14 @@ class RemittanceAmount2(GeneratedsSuper):
 
 class RemittanceAmount3(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'DuePyblAmt': MemberSpec_('DuePyblAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'DuePyblAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'DscntApldAmt': MemberSpec_('DscntApldAmt', 'DiscountAmountAndType1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'DscntApldAmt', 'type': 'DiscountAmountAndType1'}, None),
+        'CdtNoteAmt': MemberSpec_('CdtNoteAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CdtNoteAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'TaxAmt': MemberSpec_('TaxAmt', 'TaxAmountAndType1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'TaxAmt', 'type': 'TaxAmountAndType1'}, None),
+        'AdjstmntAmtAndRsn': MemberSpec_('AdjstmntAmtAndRsn', 'DocumentAdjustment1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'AdjstmntAmtAndRsn', 'type': 'DocumentAdjustment1'}, None),
+        'RmtdAmt': MemberSpec_('RmtdAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RmtdAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, DuePyblAmt=None, DscntApldAmt=None, CdtNoteAmt=None, TaxAmt=None, AdjstmntAmtAndRsn=None, RmtdAmt=None, gds_collector_=None, **kwargs_):
@@ -12673,6 +13058,10 @@ class RemittanceAmount3(GeneratedsSuper):
 
 class RemittanceInformation16(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Ustrd': MemberSpec_('Ustrd', ['Max140Text', 'xs:string'], 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Ustrd', 'type': 'xs:string'}, None),
+        'Strd': MemberSpec_('Strd', 'StructuredRemittanceInformation16', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Strd', 'type': 'StructuredRemittanceInformation16'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Ustrd=None, Strd=None, gds_collector_=None, **kwargs_):
@@ -12820,6 +13209,10 @@ class RemittanceInformation16(GeneratedsSuper):
 
 class RemittanceLocation7(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'RmtId': MemberSpec_('RmtId', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RmtId', 'type': 'xs:string'}, None),
+        'RmtLctnDtls': MemberSpec_('RmtLctnDtls', 'RemittanceLocationData1', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'RmtLctnDtls', 'type': 'RemittanceLocationData1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, RmtId=None, RmtLctnDtls=None, gds_collector_=None, **kwargs_):
@@ -12959,6 +13352,11 @@ class RemittanceLocation7(GeneratedsSuper):
 
 class RemittanceLocationData1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Mtd': MemberSpec_('Mtd', ['RemittanceLocationMethod2Code', 'xs:string'], 0, 0, {'name': 'Mtd', 'type': 'xs:string'}, None),
+        'ElctrncAdr': MemberSpec_('ElctrncAdr', ['Max2048Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'ElctrncAdr', 'type': 'xs:string'}, None),
+        'PstlAdr': MemberSpec_('PstlAdr', 'NameAndAddress16', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PstlAdr', 'type': 'NameAndAddress16'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Mtd=None, ElctrncAdr=None, PstlAdr=None, gds_collector_=None, **kwargs_):
@@ -13124,6 +13522,10 @@ class RemittanceLocationData1(GeneratedsSuper):
 
 class ServiceLevel8Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalServiceLevel1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 20),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 20),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -13276,6 +13678,10 @@ class ServiceLevel8Choice(GeneratedsSuper):
 
 class SettlementDateTimeIndication1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'DbtDtTm': MemberSpec_('DbtDtTm', ['ISODateTime', 'xs:dateTime'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'DbtDtTm', 'type': 'xs:dateTime'}, None),
+        'CdtDtTm': MemberSpec_('CdtDtTm', ['ISODateTime', 'xs:dateTime'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CdtDtTm', 'type': 'xs:dateTime'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, DbtDtTm=None, CdtDtTm=None, gds_collector_=None, **kwargs_):
@@ -13408,6 +13814,17 @@ class SettlementDateTimeIndication1(GeneratedsSuper):
 
 class SettlementInstruction7(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'SttlmMtd': MemberSpec_('SttlmMtd', ['SettlementMethod1Code', 'xs:string'], 0, 0, {'name': 'SttlmMtd', 'type': 'xs:string'}, None),
+        'SttlmAcct': MemberSpec_('SttlmAcct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SttlmAcct', 'type': 'CashAccount38'}, None),
+        'ClrSys': MemberSpec_('ClrSys', 'ClearingSystemIdentification3Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'ClrSys', 'type': 'ClearingSystemIdentification3Choice'}, None),
+        'InstgRmbrsmntAgt': MemberSpec_('InstgRmbrsmntAgt', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstgRmbrsmntAgt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'InstgRmbrsmntAgtAcct': MemberSpec_('InstgRmbrsmntAgtAcct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstgRmbrsmntAgtAcct', 'type': 'CashAccount38'}, None),
+        'InstdRmbrsmntAgt': MemberSpec_('InstdRmbrsmntAgt', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstdRmbrsmntAgt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'InstdRmbrsmntAgtAcct': MemberSpec_('InstdRmbrsmntAgtAcct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'InstdRmbrsmntAgtAcct', 'type': 'CashAccount38'}, None),
+        'ThrdRmbrsmntAgt': MemberSpec_('ThrdRmbrsmntAgt', 'BranchAndFinancialInstitutionIdentification6', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'ThrdRmbrsmntAgt', 'type': 'BranchAndFinancialInstitutionIdentification6'}, None),
+        'ThrdRmbrsmntAgtAcct': MemberSpec_('ThrdRmbrsmntAgtAcct', 'CashAccount38', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'ThrdRmbrsmntAgtAcct', 'type': 'CashAccount38'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, SttlmMtd=None, SttlmAcct=None, ClrSys=None, InstgRmbrsmntAgt=None, InstgRmbrsmntAgtAcct=None, InstdRmbrsmntAgt=None, InstdRmbrsmntAgtAcct=None, ThrdRmbrsmntAgt=None, ThrdRmbrsmntAgtAcct=None, gds_collector_=None, **kwargs_):
@@ -13641,6 +14058,12 @@ class SettlementInstruction7(GeneratedsSuper):
 
 class SettlementTimeRequest2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'CLSTm': MemberSpec_('CLSTm', ['ISOTime', 'xs:time'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CLSTm', 'type': 'xs:time'}, None),
+        'TillTm': MemberSpec_('TillTm', ['ISOTime', 'xs:time'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TillTm', 'type': 'xs:time'}, None),
+        'FrTm': MemberSpec_('FrTm', ['ISOTime', 'xs:time'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'FrTm', 'type': 'xs:time'}, None),
+        'RjctTm': MemberSpec_('RjctTm', ['ISOTime', 'xs:time'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RjctTm', 'type': 'xs:time'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, CLSTm=None, TillTm=None, FrTm=None, RjctTm=None, gds_collector_=None, **kwargs_):
@@ -13817,6 +14240,14 @@ class SettlementTimeRequest2(GeneratedsSuper):
 
 class StructuredRegulatoryReporting3(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Tp': MemberSpec_('Tp', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'xs:string'}, None),
+        'Dt': MemberSpec_('Dt', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Dt', 'type': 'xs:date'}, None),
+        'Ctry': MemberSpec_('Ctry', ['CountryCode', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Ctry', 'type': 'xs:string'}, None),
+        'Cd': MemberSpec_('Cd', ['Max10Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Cd', 'type': 'xs:string'}, None),
+        'Amt': MemberSpec_('Amt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Amt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'Inf': MemberSpec_('Inf', ['Max35Text', 'xs:string'], 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Inf', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Tp=None, Dt=None, Ctry=None, Cd=None, Amt=None, Inf=None, gds_collector_=None, **kwargs_):
@@ -14078,6 +14509,16 @@ class StructuredRegulatoryReporting3(GeneratedsSuper):
 
 class StructuredRemittanceInformation16(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'RfrdDocInf': MemberSpec_('RfrdDocInf', 'ReferredDocumentInformation7', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'RfrdDocInf', 'type': 'ReferredDocumentInformation7'}, None),
+        'RfrdDocAmt': MemberSpec_('RfrdDocAmt', 'RemittanceAmount2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RfrdDocAmt', 'type': 'RemittanceAmount2'}, None),
+        'CdtrRefInf': MemberSpec_('CdtrRefInf', 'CreditorReferenceInformation2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CdtrRefInf', 'type': 'CreditorReferenceInformation2'}, None),
+        'Invcr': MemberSpec_('Invcr', 'PartyIdentification135', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Invcr', 'type': 'PartyIdentification135'}, None),
+        'Invcee': MemberSpec_('Invcee', 'PartyIdentification135', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Invcee', 'type': 'PartyIdentification135'}, None),
+        'TaxRmt': MemberSpec_('TaxRmt', 'TaxInformation7', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TaxRmt', 'type': 'TaxInformation7'}, None),
+        'GrnshmtRmt': MemberSpec_('GrnshmtRmt', 'Garnishment3', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'GrnshmtRmt', 'type': 'Garnishment3'}, None),
+        'AddtlRmtInf': MemberSpec_('AddtlRmtInf', ['Max140Text', 'xs:string'], 1, 1, {'maxOccurs': '3', 'minOccurs': '0', 'name': 'AddtlRmtInf', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, RfrdDocInf=None, RfrdDocAmt=None, CdtrRefInf=None, Invcr=None, Invcee=None, TaxRmt=None, GrnshmtRmt=None, AddtlRmtInf=None, gds_collector_=None, **kwargs_):
@@ -14315,6 +14756,10 @@ class StructuredRemittanceInformation16(GeneratedsSuper):
 
 class SupplementaryData1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'PlcAndNm': MemberSpec_('PlcAndNm', ['Max350Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'PlcAndNm', 'type': 'xs:string'}, None),
+        'Envlp': MemberSpec_('Envlp', 'SupplementaryDataEnvelope1', 0, 0, {'name': 'Envlp', 'type': 'SupplementaryDataEnvelope1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, PlcAndNm=None, Envlp=None, gds_collector_=None, **kwargs_):
@@ -14445,6 +14890,9 @@ class SupplementaryData1(GeneratedsSuper):
 
 class SupplementaryDataEnvelope1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        '__ANY__': MemberSpec_('__ANY__', '__ANY__', 0, 0, {'namespace': '##any', 'processContents': 'lax'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, anytypeobjs_=None, gds_collector_=None, **kwargs_):
@@ -14533,6 +14981,12 @@ class SupplementaryDataEnvelope1(GeneratedsSuper):
 
 class TaxAmount2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Rate': MemberSpec_('Rate', ['PercentageRate', 'xs:decimal'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Rate', 'type': 'xs:decimal'}, None),
+        'TaxblBaseAmt': MemberSpec_('TaxblBaseAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TaxblBaseAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'TtlAmt': MemberSpec_('TtlAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TtlAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'Dtls': MemberSpec_('Dtls', 'TaxRecordDetails2', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Dtls', 'type': 'TaxRecordDetails2'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Rate=None, TaxblBaseAmt=None, TtlAmt=None, Dtls=None, gds_collector_=None, **kwargs_):
@@ -14698,6 +15152,10 @@ class TaxAmount2(GeneratedsSuper):
 
 class TaxAmountAndType1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Tp': MemberSpec_('Tp', 'TaxAmountType1Choice', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'TaxAmountType1Choice'}, None),
+        'Amt': MemberSpec_('Amt', 'ActiveOrHistoricCurrencyAndAmount', 0, 0, {'name': 'Amt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Tp=None, Amt=None, gds_collector_=None, **kwargs_):
@@ -14806,6 +15264,10 @@ class TaxAmountAndType1(GeneratedsSuper):
 
 class TaxAmountType1Choice(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cd': MemberSpec_('Cd', ['ExternalTaxAmountType1Code', 'xs:string'], 0, 0, {'name': 'Cd', 'type': 'xs:string'}, 21),
+        'Prtry': MemberSpec_('Prtry', ['Max35Text', 'xs:string'], 0, 0, {'name': 'Prtry', 'type': 'xs:string'}, 21),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cd=None, Prtry=None, gds_collector_=None, **kwargs_):
@@ -14958,6 +15420,10 @@ class TaxAmountType1Choice(GeneratedsSuper):
 
 class TaxAuthorisation1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Titl': MemberSpec_('Titl', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Titl', 'type': 'xs:string'}, None),
+        'Nm': MemberSpec_('Nm', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Nm', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Titl=None, Nm=None, gds_collector_=None, **kwargs_):
@@ -15110,6 +15576,19 @@ class TaxAuthorisation1(GeneratedsSuper):
 
 class TaxInformation7(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cdtr': MemberSpec_('Cdtr', 'TaxParty1', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Cdtr', 'type': 'TaxParty1'}, None),
+        'Dbtr': MemberSpec_('Dbtr', 'TaxParty2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Dbtr', 'type': 'TaxParty2'}, None),
+        'UltmtDbtr': MemberSpec_('UltmtDbtr', 'TaxParty2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'UltmtDbtr', 'type': 'TaxParty2'}, None),
+        'AdmstnZone': MemberSpec_('AdmstnZone', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'AdmstnZone', 'type': 'xs:string'}, None),
+        'RefNb': MemberSpec_('RefNb', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RefNb', 'type': 'xs:string'}, None),
+        'Mtd': MemberSpec_('Mtd', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Mtd', 'type': 'xs:string'}, None),
+        'TtlTaxblBaseAmt': MemberSpec_('TtlTaxblBaseAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TtlTaxblBaseAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'TtlTaxAmt': MemberSpec_('TtlTaxAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TtlTaxAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'Dt': MemberSpec_('Dt', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Dt', 'type': 'xs:date'}, None),
+        'SeqNb': MemberSpec_('SeqNb', ['Number', 'xs:decimal'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SeqNb', 'type': 'xs:decimal'}, None),
+        'Rcrd': MemberSpec_('Rcrd', 'TaxRecord2', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Rcrd', 'type': 'TaxRecord2'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cdtr=None, Dbtr=None, UltmtDbtr=None, AdmstnZone=None, RefNb=None, Mtd=None, TtlTaxblBaseAmt=None, TtlTaxAmt=None, Dt=None, SeqNb=None, Rcrd=None, gds_collector_=None, **kwargs_):
@@ -15446,6 +15925,18 @@ class TaxInformation7(GeneratedsSuper):
 
 class TaxInformation8(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Cdtr': MemberSpec_('Cdtr', 'TaxParty1', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Cdtr', 'type': 'TaxParty1'}, None),
+        'Dbtr': MemberSpec_('Dbtr', 'TaxParty2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Dbtr', 'type': 'TaxParty2'}, None),
+        'AdmstnZone': MemberSpec_('AdmstnZone', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'AdmstnZone', 'type': 'xs:string'}, None),
+        'RefNb': MemberSpec_('RefNb', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RefNb', 'type': 'xs:string'}, None),
+        'Mtd': MemberSpec_('Mtd', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Mtd', 'type': 'xs:string'}, None),
+        'TtlTaxblBaseAmt': MemberSpec_('TtlTaxblBaseAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TtlTaxblBaseAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'TtlTaxAmt': MemberSpec_('TtlTaxAmt', 'ActiveOrHistoricCurrencyAndAmount', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TtlTaxAmt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+        'Dt': MemberSpec_('Dt', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Dt', 'type': 'xs:date'}, None),
+        'SeqNb': MemberSpec_('SeqNb', ['Number', 'xs:decimal'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'SeqNb', 'type': 'xs:decimal'}, None),
+        'Rcrd': MemberSpec_('Rcrd', 'TaxRecord2', 1, 1, {'maxOccurs': 'unbounded', 'minOccurs': '0', 'name': 'Rcrd', 'type': 'TaxRecord2'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Cdtr=None, Dbtr=None, AdmstnZone=None, RefNb=None, Mtd=None, TtlTaxblBaseAmt=None, TtlTaxAmt=None, Dt=None, SeqNb=None, Rcrd=None, gds_collector_=None, **kwargs_):
@@ -15767,6 +16258,11 @@ class TaxInformation8(GeneratedsSuper):
 
 class TaxParty1(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'TaxId': MemberSpec_('TaxId', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TaxId', 'type': 'xs:string'}, None),
+        'RegnId': MemberSpec_('RegnId', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RegnId', 'type': 'xs:string'}, None),
+        'TaxTp': MemberSpec_('TaxTp', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TaxTp', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, TaxId=None, RegnId=None, TaxTp=None, gds_collector_=None, **kwargs_):
@@ -15922,6 +16418,12 @@ class TaxParty1(GeneratedsSuper):
 
 class TaxParty2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'TaxId': MemberSpec_('TaxId', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TaxId', 'type': 'xs:string'}, None),
+        'RegnId': MemberSpec_('RegnId', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'RegnId', 'type': 'xs:string'}, None),
+        'TaxTp': MemberSpec_('TaxTp', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TaxTp', 'type': 'xs:string'}, None),
+        'Authstn': MemberSpec_('Authstn', 'TaxAuthorisation1', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Authstn', 'type': 'TaxAuthorisation1'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, TaxId=None, RegnId=None, TaxTp=None, Authstn=None, gds_collector_=None, **kwargs_):
@@ -16092,6 +16594,11 @@ class TaxParty2(GeneratedsSuper):
 
 class TaxPeriod2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Yr': MemberSpec_('Yr', ['ISODate', 'xs:date'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Yr', 'type': 'xs:date'}, None),
+        'Tp': MemberSpec_('Tp', ['TaxRecordPeriod1Code', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'xs:string'}, None),
+        'FrToDt': MemberSpec_('FrToDt', 'DatePeriod2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'FrToDt', 'type': 'DatePeriod2'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Yr=None, Tp=None, FrToDt=None, gds_collector_=None, **kwargs_):
@@ -16252,6 +16759,17 @@ class TaxPeriod2(GeneratedsSuper):
 
 class TaxRecord2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Tp': MemberSpec_('Tp', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Tp', 'type': 'xs:string'}, None),
+        'Ctgy': MemberSpec_('Ctgy', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Ctgy', 'type': 'xs:string'}, None),
+        'CtgyDtls': MemberSpec_('CtgyDtls', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CtgyDtls', 'type': 'xs:string'}, None),
+        'DbtrSts': MemberSpec_('DbtrSts', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'DbtrSts', 'type': 'xs:string'}, None),
+        'CertId': MemberSpec_('CertId', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'CertId', 'type': 'xs:string'}, None),
+        'FrmsCd': MemberSpec_('FrmsCd', ['Max35Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'FrmsCd', 'type': 'xs:string'}, None),
+        'Prd': MemberSpec_('Prd', 'TaxPeriod2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Prd', 'type': 'TaxPeriod2'}, None),
+        'TaxAmt': MemberSpec_('TaxAmt', 'TaxAmount2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'TaxAmt', 'type': 'TaxAmount2'}, None),
+        'AddtlInf': MemberSpec_('AddtlInf', ['Max140Text', 'xs:string'], 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'AddtlInf', 'type': 'xs:string'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Tp=None, Ctgy=None, CtgyDtls=None, DbtrSts=None, CertId=None, FrmsCd=None, Prd=None, TaxAmt=None, AddtlInf=None, gds_collector_=None, **kwargs_):
@@ -16534,6 +17052,10 @@ class TaxRecord2(GeneratedsSuper):
 
 class TaxRecordDetails2(GeneratedsSuper):
     __hash__ = GeneratedsSuper.__hash__
+    member_data_items_ = {
+        'Prd': MemberSpec_('Prd', 'TaxPeriod2', 0, 1, {'maxOccurs': '1', 'minOccurs': '0', 'name': 'Prd', 'type': 'TaxPeriod2'}, None),
+        'Amt': MemberSpec_('Amt', 'ActiveOrHistoricCurrencyAndAmount', 0, 0, {'name': 'Amt', 'type': 'ActiveOrHistoricCurrencyAndAmount'}, None),
+    }
     subclass = None
     superclass = None
     def __init__(self, Prd=None, Amt=None, gds_collector_=None, **kwargs_):
