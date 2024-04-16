@@ -1,2 +1,3 @@
 pytest
-generateDS
+# generateDS
+xsdata[cli,lxml,soap]

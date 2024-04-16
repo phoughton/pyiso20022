@@ -14,11 +14,12 @@ import uuid
 # Create the root document element
 doc = Document()
 
-the_sttlinf = SettlementInstruction7(sttlm_mtd="CLRG",
-                                     clr_sys=ClearingSystemIdentification2Choice(cd="STG"))
+the_sttlinf = SettlementInstruction7()
+the_sttlinf.set_SttlmMtd("CLRG")
+the_sttlinf.set_ClrSys(ClearingSystemIdentification2Choice(Cd="STG"))
 
 # Create the Group Header
-grp_header = GroupHeader93(msg_id="MIDTheMessageId",
+grp_header = GroupHeader93(MsgId="MIDTheMessageId",
                            NbOfTxs=1,
                            CreDtTm="2019-01-01T00:00:00",
                            SttlmInf=the_sttlinf)
@@ -55,16 +56,20 @@ cdtrtx = CreditTransferTransaction39(PmtId=pmt_id,
                                      ChrgsInf=[chrgs_inf],
                                      InstdAgt=bic_1,
                                      InstgAgt=bic_2,
-                                     UltmtDbtr=ult_debtr, initg_pty=)
+                                     UltmtDbtr=ult_debtr,
+                                     InitgPty= )
 
+
+# fit_to_fi_cust_cred_trans = FIToFICustomerCreditTransferV08()
 
 fit_to_fi_cust_cred_trans = FitoFicustomerCreditTransferV08()
+
 
 fit_to_fi_cust_cred_trans.set_GrpHdr(grp_header)
 fit_to_fi_cust_cred_trans.set_CdtTrfTxInf([cdtrtx])
 
 
-doc(FitoFicustomerCreditTransferV08=fit_to_fi_cust_cred_trans)
+doc.set_FIToFICstmrCdtTrf(fit_to_fi_cust_cred_trans)
 
 
 # Export to an XML file
