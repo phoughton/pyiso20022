@@ -1,4 +1,4 @@
-from pacs_008_001_08 import *
+from pacs.pacs_008_001_08 import *
 from xsdata.formats.dataclass.serializers import XmlSerializer
 from xsdata.formats.dataclass.serializers.config import SerializerConfig
 import uuid
