@@ -135,3 +135,6 @@ ttylog
 *.xml
 pacs_008_001_08/
 pacs/
+head/
+camt/
+pain/
