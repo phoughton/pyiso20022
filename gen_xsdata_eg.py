@@ -1,11 +1,3 @@
-# from pacs_008_001_08 import Document, FIToFICustomerCreditTransferV08
-# from pacs_008_001_08 import GroupHeader93, SettlementInstruction7
-# from pacs_008_001_08 import ClearingSystemIdentification2Choice
-# from pacs_008_001_08 import CreditTransferTransaction39, PaymentIdentification7
-# from pacs_008_001_08 import BranchAndFinancialInstitutionIdentification6
-# from pacs_008_001_08 import FinancialInstitutionIdentification18
-# from pacs_008_001_08 import PartyIdentification135
-# from pacs_008_001_08 import PostalAddress24
 from pacs_008_001_08 import *
 from xsdata.formats.dataclass.serializers import XmlSerializer
 from xsdata.formats.dataclass.serializers.config import SerializerConfig
