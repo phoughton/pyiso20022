@@ -1,4 +1,21 @@
 #!/usr/bin/bash
 
-xsdata xsd/payments_clearing_and_settlement/pacs.008/pacs.008.001.08.xsd --package pacs.pacs_008_001_08
-xsdata xsd/business_application_header/head.001/head.001.001.02.xsd --package head.001.001.02
+
+generate_xsdata() {
+    package=$1
+    directory=$2
+
+    list_of_xsd=$(find $directory -name "*.xsd")
+
+    for xsd in $list_of_xsd
+    do
+        filename=$(basename "$xsd" .xsd)
+        filename=$(echo $filename | tr '.' '_')
+        xsdata $xsd --package $package.$filename
+    done
+}
+
+generate_xsdata "pacs" "xsd/payments_clearing_and_settlement"
+generate_xsdata "head" "xsd/business_application_header"
+
+
