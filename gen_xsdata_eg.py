@@ -1,4 +1,4 @@
-from pacs.pacs_008_001_08 import *
+from pyiso20022.pacs.pacs_008_001_08 import *
 from xsdata.formats.dataclass.serializers import XmlSerializer
 from xsdata.formats.dataclass.serializers.config import SerializerConfig
 import uuid
@@ -91,5 +91,5 @@ config = SerializerConfig(pretty_print=True)
 serializer = XmlSerializer(config=config)
 xml_string = serializer.render(doc, ns_map={None: "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08"})
 
-with open("my_model.xml", "w") as xml_file:
+with open("my_pacs_008.xml", "w") as xml_file:
     xml_file.write(xml_string)

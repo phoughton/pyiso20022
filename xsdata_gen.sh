@@ -11,7 +11,7 @@ generate_xsdata() {
     do
         filename=$(basename "$xsd" .xsd)
         filename=$(echo $filename | tr '.' '_')
-        xsdata $xsd --package $package.$filename
+        xsdata $xsd --package pyiso20022.$package.$filename
     done
 }
 
