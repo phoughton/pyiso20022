@@ -1,7 +1,9 @@
 from pyiso20022.pacs.pacs_008_001_08 import *
+import pyiso20022.head.head_001_001_02 as hd
 from xsdata.formats.dataclass.serializers import XmlSerializer
 from xsdata.formats.dataclass.serializers.config import SerializerConfig
 import uuid
+from lxml import etree
 
 
 clr_sys = ClearingSystemIdentification3Choice(cd="STG")
@@ -87,9 +89,41 @@ doc = Document(fito_ficstmr_cdt_trf=f2f_cust_cred_trans)
 #     doc.export(xml_file, 0, name_='Document')
 
 
-config = SerializerConfig(pretty_print=True)
-serializer = XmlSerializer(config=config)
-xml_string = serializer.render(doc, ns_map={None: "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08"})
+fr_fiid = hd.FinancialInstitutionIdentification18(bicfi="BARCGB22")
+fr_bafii = hd.BranchAndFinancialInstitutionIdentification6(fin_instn_id=fr_fiid)
+fr_party44 = hd.Party44Choice(fiid=fr_bafii)
+
+to_fiid = hd.FinancialInstitutionIdentification18(bicfi="BARCGB22")
+to_bafii = hd.BranchAndFinancialInstitutionIdentification6(fin_instn_id=to_fiid)
+to_party44 = hd.Party44Choice(fiid=to_bafii)
+
+header = hd.AppHdr(fr=fr_party44,
+                   to=to_party44,
+                   biz_msg_idr="MIDRFGHJKL",
+                   msg_def_idr="pacs.008.001.08",
+                   biz_svc="boe.chaps.enh.01",
+                   cre_dt="2019-01-01T00:00:00",
+                   prty="NORM")
+
+config_subs = SerializerConfig(pretty_print=True, xml_declaration=False)
+serializer_subs = XmlSerializer(config=config_subs)
+
+ns_map_header = {
+    None: "urn:iso:std:iso:20022:tech:xsd:head.001.001.02"
+}
+ns_map_doc = {
+    None: "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08"
+}
+
+header_el = serializer_subs.render(header, ns_map=ns_map_header)
+doc_el = serializer_subs.render(doc, ns_map=ns_map_doc)
+
+msg_root = etree.Element('MSGRoot')
+msg_root.append(etree.fromstring(header_el))
+msg_root.append(etree.fromstring(doc_el))
+
+msg_full = etree.tostring(msg_root, pretty_print=True,
+                          xml_declaration=True, encoding='UTF-8')
 
 with open("my_pacs_008.xml", "w") as xml_file:
-    xml_file.write(xml_string)
+    xml_file.write(str(msg_full, encoding='utf-8'))
