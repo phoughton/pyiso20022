@@ -117,5 +117,5 @@ msg_root.append(etree.fromstring(doc_el))
 msg_full = etree.tostring(msg_root, pretty_print=True,
                           xml_declaration=True, encoding='UTF-8')
 
-with open("my_pacs_008.xml", "w") as xml_file:
+with open("my_pacs_008_from_code.xml", "w") as xml_file:
     xml_file.write(str(msg_full, encoding='utf-8'))
