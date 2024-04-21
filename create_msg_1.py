@@ -75,20 +75,12 @@ cdtrtx = CreditTransferTransaction39(pmt_id=pmt_id,
                                      rmt_inf=rmt_inf)
 
 
-# fit_to_fi_cust_cred_trans = FIToFICustomerCreditTransferV08()
-
 f2f_cust_cred_trans = FitoFicustomerCreditTransferV08(grp_hdr=grp_header,
                                                       cdt_trf_tx_inf=[cdtrtx])
 
-
-# Create the root document element
 doc = Document(fito_ficstmr_cdt_trf=f2f_cust_cred_trans)
 
-# Export to an XML file
-# with open("payment_message.xml", "w") as xml_file:
-#     doc.export(xml_file, 0, name_='Document')
-
-
+# Create the AppHdr
 fr_fiid = hd.FinancialInstitutionIdentification18(bicfi="BARCGB22")
 fr_bafii = hd.BranchAndFinancialInstitutionIdentification6(fin_instn_id=fr_fiid)
 fr_party44 = hd.Party44Choice(fiid=fr_bafii)
