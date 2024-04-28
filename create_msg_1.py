@@ -4,16 +4,17 @@ from xsdata.formats.dataclass.serializers import XmlSerializer
 from xsdata.formats.dataclass.serializers.config import SerializerConfig
 import uuid
 from lxml import etree
+from xsdata.models.datatype import XmlDateTime
 
 
 clr_sys = ClearingSystemIdentification3Choice(cd="STG")
-the_sttlinf = SettlementInstruction7(sttlm_mtd="CLRG",
+the_sttlinf = SettlementInstruction7(sttlm_mtd=SettlementMethod1Code("CLRG"),
                                      clr_sys=clr_sys)
 
 # Create the Group Header
 grp_header = GroupHeader93(msg_id="MIDTheMessageId",
                            nb_of_txs=1,
-                           cre_dt_tm="2019-01-01T00:00:00",
+                           cre_dt_tm=XmlDateTime.from_string("2019-01-01T00:00:00"),
                            sttlm_inf=the_sttlinf)
 
 
@@ -23,7 +24,7 @@ pmt_id = PaymentIdentification7(instr_id="IXWEDRFTGHJK5",
                                 uetr=str(uuid.uuid4()))
 
 
-zero_amt = ActiveOrHistoricCurrencyAndAmount("GBP", 0)
+zero_amt = ActiveOrHistoricCurrencyAndAmount(ccy="GBP", value=0)
 
 bic_1 = FinancialInstitutionIdentification18("BARCGB22")
 bic_2 = FinancialInstitutionIdentification18("VODAGB23")
@@ -55,9 +56,9 @@ intra_bk_st_amt = ActiveCurrencyAndAmount(ccy="GBP", value=555.01)
 
 purp = Purpose2Choice(cd="PHON")
 rem_loc = RemittanceLocation7(rmt_id="BUSINESS DEBIT")
-rmt_inf = RemittanceInformation16(ustrd="INVOICE 123456")
+rmt_inf = RemittanceInformation16(ustrd=["INVOICE 123456"])
 cdtrtx = CreditTransferTransaction39(pmt_id=pmt_id,
-                                     chrg_br="SHAR",
+                                     chrg_br=ChargeBearerType1Code("SHAR"),
                                      intr_bk_sttlm_dt="2019-01-01",
                                      intr_bk_sttlm_amt=intra_bk_st_amt,
                                      instd_amt=instd_amt,
@@ -100,15 +101,15 @@ header = hd.AppHdr(fr=fr_party44,
 config_subs = SerializerConfig(pretty_print=True, xml_declaration=False)
 serializer_subs = XmlSerializer(config=config_subs)
 
-ns_map_header = {
+ns_map_header: dict[None, str] = {
     None: "urn:iso:std:iso:20022:tech:xsd:head.001.001.02"
 }
-ns_map_doc = {
+ns_map_doc: dict[None, str] = {
     None: "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08"
 }
 
-header_el = serializer_subs.render(header, ns_map=ns_map_header)
-doc_el = serializer_subs.render(doc, ns_map=ns_map_doc)
+header_el: str = serializer_subs.render(header, ns_map=ns_map_header)
+doc_el: str = serializer_subs.render(doc, ns_map=ns_map_doc)
 
 msg_root = etree.Element('MSGRoot')
 msg_root.append(etree.fromstring(header_el))
