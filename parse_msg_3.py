@@ -5,7 +5,7 @@ import sys
 
 parser = XmlParser()
 
-with open("example_files/gs_pain/pain001_001_09.xml", "rb") as xml_file:
+with open("example_files/gs_pain/pain001_001_08.xml", "rb") as xml_file:
     doc: Document = parser.parse(xml_file, Document, )
 
 # These are needed if using Type checking mode basic or higher in PyLance

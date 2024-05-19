@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.08">
+    <CstmrCdtTrfInitn>
+        <GrpHdr>
+            <MsgId>test-160620</MsgId>
+            <CreDtTm>2019-12-03T13:01:00+00:00</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <CtrlSum>10</CtrlSum>
+            <InitgPty>
+                <Nm>TXB Test Account</Nm>
+                <Id>
+                    <OrgId>
+                        <Othr>
+                            <Id>uktestdda</Id>
+                        </Othr>
+                    </OrgId>
+                </Id>
+            </InitgPty>
+        </GrpHdr>
+        <PmtInf>
+            <PmtInfId>test-160620</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <ReqdExctnDt>
+                <Dt>2020-06-16</Dt>
+            </ReqdExctnDt>
+            <Dbtr>
+                <Nm>UFXQHBE</Nm>
+                <PstlAdr>
+                    <StrtNm>LCPM LUEZOF</StrtNm>
+                    <BldgNb>88</BldgNb>
+                    <PstCd>052</PstCd>
+                    <TwnNm>VVR MBDB</TwnNm>
+                    <Ctry>QA</Ctry>
+                </PstlAdr>
+            </Dbtr>
+            <DbtrAcct>
+                <Id>
+                    <Othr>
+                        <Id>50000970</Id>
+                    </Othr>
+                </Id>
+                <Ccy>GBP</Ccy>
+            </DbtrAcct>
+            <DbtrAgt>
+                <FinInstnId>
+                    <BICFI>GSLDGB20</BICFI>
+                </FinInstnId>
+            </DbtrAgt>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>test-160620</EndToEndId>
+                </PmtId>
+                <PmtTpInf>
+                    <CtgyPurp>
+                        <Prtry>Tax Payment</Prtry>
+                    </CtgyPurp>
+                </PmtTpInf>
+                <Amt>
+                    <InstdAmt Ccy="GBP">10</InstdAmt>
+                </Amt>
+                <CdtrAgt>
+                    <FinInstnId>
+                        <BICFI>BARCGB22</BICFI>
+                    </FinInstnId>
+                </CdtrAgt>
+                <Cdtr>
+                    <Nm>Creditor account name</Nm>
+                    <PstlAdr>
+                        <StrtNm>LCPM LUEZOF</StrtNm>
+                        <BldgNb>88</BldgNb>
+                        <PstCd>052</PstCd>
+                        <TwnNm>VVR MBDB</TwnNm>
+                        <Ctry>QA</Ctry>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct>
+                    <Id>
+                        <Othr>
+                            <Id>12345678</Id>
+                        </Othr>
+                    </Id>
+                </CdtrAcct>
+                <Purp>
+                    <Prtry>Purpose of payment</Prtry>
+                </Purp>
+                <RmtInf>
+                    <Ustrd>USD Payment from USD account</Ustrd>
+                </RmtInf>
+            </CdtTrfTxInf>
+        </PmtInf>
+    </CstmrCdtTrfInitn>
+</Document>
