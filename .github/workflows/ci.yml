@@ -51,6 +51,8 @@ jobs:
       - name: install dependencies
         run: |
           pip install -r build_requirements.txt
+      - name: Run shell script
+        run: ./build_classes_from_xsds.bsh
       - name: build_package
         run: |
           python3 setup.py sdist bdist_wheel
