@@ -1,0 +1,63 @@
+name: CI
+
+on: push
+
+jobs:
+  build-and-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        os: [ubuntu-latest]
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@main
+
+      # Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade -r build_requirements.txt
+      # Run our unit tests
+      - name: Run unit tests
+        run: |
+          python -m pytest -s
+          
+  deploy-to-pypi:
+  # Only run this job if "build" has ended successfully
+    needs:
+      - build-and-test
+    if: github.ref == 'refs/heads/master'  
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v4
+      - name: Set up Python 
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v4
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('build_requirements.txt') }}
+      
+      - name: install dependencies
+        run: |
+          pip install -r build_requirements.txt
+      - name: build_package
+        run: |
+          python3 setup.py sdist bdist_wheel
+      - name: Publish a Python distribution to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          verbose: true
+          skip-existing: true
+          user: __token__
+          password: ${{ secrets.PYPI_LOGIN_TOKEN }}
