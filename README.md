@@ -8,7 +8,7 @@ A suite of classes to support payment message generation (for ISO 20022 payment 
 pip install pyiso20022
 ```
 
-Then:
+Then use this code:
 
 ```python
 from xsdata.formats.dataclass.parsers import XmlParser
