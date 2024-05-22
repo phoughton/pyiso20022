@@ -42,7 +42,6 @@ jobs:
       id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
     if: github.ref == 'refs/heads/main'  
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v4
       - name: Set up Python 
         uses: actions/setup-python@v5
