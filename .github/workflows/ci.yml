@@ -34,8 +34,13 @@ jobs:
   # Only run this job if "build" has ended successfully
     needs:
       - build-and-test
-    if: github.ref == 'refs/heads/main'  
     runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/pyiso20022
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+    if: github.ref == 'refs/heads/main'  
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v4
@@ -56,10 +61,5 @@ jobs:
       - name: build_package
         run: |
           python3 setup.py sdist bdist_wheel
-      - name: Publish a Python distribution to PyPI
+      - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          verbose: true
-          skip-existing: true
-          user: __token__
-          password: ${{ secrets.PYPI_LOGIN_TOKEN }}
