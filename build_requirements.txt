@@ -2,3 +2,4 @@ pytest
 setuptools
 wheel
 twine
+xsdata[cli,lxml,soap]
