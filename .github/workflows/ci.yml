@@ -34,7 +34,7 @@ jobs:
   # Only run this job if "build" has ended successfully
     needs:
       - build-and-test
-    if: github.ref == 'refs/heads/master'  
+    if: github.ref == 'refs/heads/main'  
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
