@@ -1,15 +1,20 @@
 # ISO 20022 Message Generator (pyiso20022)
 
-A suite of classes to support payment message generation (for ISO 20022 payment messages)
+A suite of classes to support payment message generation (for ISO 20022 payment messages).
+
+These are the type of payments messages used in SWIFT for payment schemes such as TARGET2, CHAPS, CBPR+, MEPS+ etc. You may hear them refered to as PACS messages.
+
+You may also use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats Payment Initiation) messages.
 
 ## Using pyiso20022 package
 
+Install this package and some others...
 ```bash
 pip install pyiso20022
 pip install xsdata[cli,lxml,soap]
 ```
 
-Then use this code:
+Then use this code to parse a PAIN message...:
 
 ```python
 from xsdata.formats.dataclass.parsers import XmlParser
