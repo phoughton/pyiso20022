@@ -19,15 +19,20 @@ import sys
 
 parser = XmlParser()
 
+# Read in a file, you can get an example PAIN (Payment Initiation) message from: 
+# https://developer.gs.com/docs/services/transaction-banking/pain001sample/
 with open("example_files/gs_pain/pain001_001_08.xml", "rb") as xml_file:
     doc: Document = parser.parse(xml_file, Document, )
 
+# Print out the Post Code.
 print(doc.cstmr_cdt_trf_initn.pmt_inf[0].dbtr.pstl_adr.pst_cd)
 ```
 
 ## Create a MX (ISO20022) payment message programatically:
 
-This is an example of a realistic PACS.008 MX payment message.
+This is an example of how to create a realistic PACS.008 MX payment message.
+
+(it should write out a file called: `my_pacs_008_from_code.xml`)
 
 Depending on your setup you may need a different or even no wrapper element (I've used <MSGRoot> here, but yours might be called something different etc)
 
