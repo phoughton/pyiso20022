@@ -1,13 +1,18 @@
 import pytest
-from myproj import myclass
+from xsdata.formats.dataclass.parsers import XmlParser
+from pyiso20022.pain.pain_001_001_08 import *
 
 
-@pytest.mark.parametrize("a_var", [
-        (1),
-        (2),
-        (3)
+@pytest.mark.parametrize("expected_postcode", [
+        ("052")
     ])
-def test_myclass(a_var):
-    my_obj = myclass.MyClass(a_var)
-    assert my_obj.get_my_var() == a_var
-    assert my_obj.myvar == a_var
+def test_parse_pain001_001_008(expected_postcode):
+
+    parser = XmlParser()
+
+    with open("example_files/gs_pain/pain001_001_08.xml", "rb") as xml_file:
+        doc: Document = parser.parse(xml_file, Document, )
+
+    post_code = doc.cstmr_cdt_trf_initn.pmt_inf[0].dbtr.pstl_adr.pst_cd
+
+    assert post_code == expected_postcode
