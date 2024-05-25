@@ -6,7 +6,7 @@ A suite of classes to support payment message generation (for ISO 20022 payment 
 
 ```bash
 pip install pyiso20022
-pip install xsdata
+pip install xsdata[cli,lxml,soap]
 ```
 
 Then use this code:
@@ -26,6 +26,10 @@ print(doc.cstmr_cdt_trf_initn.pmt_inf[0].dbtr.pstl_adr.pst_cd)
 ```
 
 ## Create a MX (ISO20022) payment message programatically:
+
+This is an example of a realistic PACS.008 MX payment message.
+
+Depending on your setup you may need a different or even no wrapper element (I've used <MSGRoot> here, but yours might be called something different etc)
 
 ```python
 from pyiso20022.pacs.pacs_008_001_08 import *
