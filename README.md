@@ -1,4 +1,4 @@
-<iMG SRC="docs/logo_pyiso20022.png">
+<iMG SRC="https://github.com/phoughton/pyiso20022/raw/main/docs/logo_pyiso20022.png?raw=true">
 
 # PYISO20022 - an ISO 20022 Message Generator
 
