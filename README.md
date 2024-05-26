@@ -1,8 +1,8 @@
-<iMG SRC="https://github.com/phoughton/pyiso20022/raw/main/docs/logo_pyiso20022.png?raw=true">
+<iMG SRC="https://github.com/phoughton/pyiso20022/raw/main/docs/logo_pyiso20022.png?raw=true" WIDTH=400>
 
 # PYISO20022 - an ISO 20022 Message Generator
 
-A suite of classes to support payment message generation (for ISO 20022 payment messages).
+A package of classes to support payment message generation (for ISO 20022 payment messages).
 
 These are the type of payments messages used in SWIFT for payment schemes such as TARGET2, CHAPS, CBPR+, MEPS+ etc. You may hear them refered to as PACS messages.
 
@@ -34,6 +34,8 @@ with open("example_files/gs_pain/pain001_001_08.xml", "rb") as xml_file:
 # Print out the Post Code.
 print(doc.cstmr_cdt_trf_initn.pmt_inf[0].dbtr.pstl_adr.pst_cd)
 ```
+
+or...
 
 ## Create a MX (ISO20022) payment message programatically:
 
