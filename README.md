@@ -1,4 +1,6 @@
-# ISO 20022 Message Generator (pyiso20022)
+<iMG SRC="docs/logo_pyiso20022.png">
+
+# PYISO20022 - an ISO 20022 Message Generator
 
 A suite of classes to support payment message generation (for ISO 20022 payment messages).
 
