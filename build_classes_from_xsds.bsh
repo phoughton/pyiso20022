@@ -20,5 +20,5 @@ rm -rf pyiso20022/
 generate_xsdata "pacs" "xsd/payments_clearing_and_settlement"
 generate_xsdata "head" "xsd/business_application_header"
 generate_xsdata "pain" "xsd/payments_initiation"
-
+generate_xsdata "camt" "xsd/cash_management"
 

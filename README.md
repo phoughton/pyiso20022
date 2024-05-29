@@ -4,9 +4,9 @@
 
 A package of classes to support payment message generation (for ISO 20022 payment messages).
 
-These are the type of payments messages used in SWIFT for payment schemes such as TARGET2, CHAPS, CBPR+, MEPS+ etc. You may hear them refered to as PACS messages.
+These are the type of payments messages used in SWIFT for payment schemes such as TARGET2, CHAPS, CBPR+, MEPS+ etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT or PAIN).
 
-You may also use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats Payment Initiation) messages.
+You may use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats Payment Initiation) messages.
 
 ## Using pyiso20022 package
 
@@ -172,7 +172,7 @@ with open("my_pacs_008_from_code.xml", "w") as xml_file:
 ```
 
 ### Message types?
-Currently only supports PACS & PAIN messages as well as HEAD (header documents for the PACS).
+Currently supports PACS, PAIN and CAMT messages as well as HEAD (header documents for the PACS).
 
 
 ### Source of truth?
