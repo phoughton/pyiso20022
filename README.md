@@ -6,7 +6,11 @@ A package of classes to support payment message generation (for ISO 20022 paymen
 
 These are the type of payments messages used in SWIFT for payment schemes such as TARGET2, CHAPS, CBPR+, MEPS+ etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT or PAIN).
 
-You may use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats Payment Initiation) messages.
+You might use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats Payment Initiation) messages.
+
+See a full list of types and versions [here](https://github.com/phoughton/pyiso20022/blob/main/supported_msg_types_final.md).
+
+(Raise an issue in github if find a version or msg type is missing!)
 
 ## Using pyiso20022 package
 
