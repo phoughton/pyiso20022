@@ -11,7 +11,7 @@ generate_xsdata() {
     do
         filename=$(basename "$xsd" .xsd)
         filename=$(echo $filename | tr '.' '_')
-        xsdata $xsd --package pyiso20022.$package.$filename
+        xsdata $xsd --package pyiso20022.$package.$filename &
         echo "- $package.$filename" >> supported_msg_types.md
     done
 }
@@ -23,6 +23,6 @@ generate_xsdata "pacs" "xsd/payments_clearing_and_settlement"
 generate_xsdata "head" "xsd/business_application_header"
 generate_xsdata "pain" "xsd/payments_initiation"
 generate_xsdata "camt" "xsd/cash_management"
-
+wait
 cat supported_msg_types.md | sort -n | uniq > supported_msg_types_final.md
 rm supported_msg_types.md

@@ -4,7 +4,7 @@
 
 A package of classes to support payment message generation (for ISO 20022 payment messages).
 
-These are the type of payments messages used in SWIFT for payment schemes such as TARGET2, CHAPS, CBPR+, MEPS+ etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT or PAIN).
+These are the type of payments messages used in SWIFT for payment schemes such as FedNow, TARGET2, CHAPS, CBPR+, MEPS+ and other SWIFT/Wire Transfer style payments etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT or PAIN).
 
 You might use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats Payment Initiation) messages.
 
