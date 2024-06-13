@@ -20,7 +20,7 @@ pip install pyiso20022
 pip install xsdata[cli,lxml,soap]
 ```
 
-Then use this code to parse a PAIN message...:
+Then use this code to parse a PAIN message, like [this one](https://github.com/phoughton/pyiso20022/blob/main/example_files/gs_pain/pain001_001_08.xml).:
 
 ```python
 from xsdata.formats.dataclass.parsers import XmlParser

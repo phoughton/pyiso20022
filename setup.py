@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pyiso20022",
-    version="0.3.4",
+    version="0.3.5",
     author="Peter Houghton",
     author_email="pete@investigatingsoftware.co.uk",
     description="pyiso20022 is a library for generating ISO20022 messages in Python.",
