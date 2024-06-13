@@ -2,15 +2,15 @@
 
 # PYISO20022 - an ISO 20022 Message Generator
 
-A package of classes to support payment message generation (for ISO 20022 payment messages).
+A package of classes to support payment, financial, securities & accounting message generation (for ISO 20022 messages).
 
-These are the type of payments messages used in SWIFT for payment schemes such as FedNow, TARGET2, CHAPS, CBPR+, MEPS+ and other SWIFT/Wire Transfer style payments etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT or PAIN).
+These are the type of payments messages used in payment schemes such as FedNow, TARGET2, CHAPS, CBPR+, MEPS+ and other SWIFT/Wire Transfer style payments etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT.056 or PAIN.001).
 
-You might use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats Payment Initiation) messages.
+You might use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats _Payment Initiation_) messages.
 
 See a full list of types and versions [here](https://github.com/phoughton/pyiso20022/blob/main/supported_msg_types_final.md).
 
-(Raise an issue in github if find a version or msg type is missing!)
+(Raise an issue in github if find a version or msg type is missing! We are constantly expanding the scope of messages we support.)
 
 ## Using pyiso20022 package
 
@@ -47,7 +47,7 @@ This is an example of how to create a realistic PACS.008 MX payment message.
 
 (it should write out a file called: `my_pacs_008_from_code.xml`)
 
-Depending on your setup you may need a different or even no wrapper element (I've used <MSGRoot> here, but yours might be called something different etc)
+Depending on your setup you may need a different or even no wrapper element (I've used &lt;MSGRoot&gt; here, but yours might be called something different etc)
 
 ```python
 from pyiso20022.pacs.pacs_008_001_08 import *
