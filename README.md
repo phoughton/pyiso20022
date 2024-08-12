@@ -1,10 +1,11 @@
 <iMG SRC="https://github.com/phoughton/pyiso20022/raw/main/docs/logo_pyiso20022.png?raw=true" WIDTH=400>
 
 
-1. [PYISO20022 - an ISO 20022 Message Generator and Parser](#pyiso20022-an-iso-20022-message-generator-and-parser)
-1. [Parse an ISO 20022 PAIN.001 message](#parse-an-iso-20022-pain001-message)
-1. [Create a ISO 20022 PAIN.001 message](#create-a-iso-20022-pain001-message)
-1. [Create a ISO 20022 PACS.008 message](#create-a-iso-20022-pacs008-message)
+Table of Contents: _(Links to this page on GitHub)_
+1. [PYISO20022 - an ISO 20022 Message Generator and Parser](https://github.com/phoughton/pyiso20022/blob/main/README.md#pyiso20022-an-iso-20022-message-generator-and-parser)
+1. [Parse an ISO 20022 PAIN.001 message](https://github.com/phoughton/pyiso20022/blob/main/README.md#parse-an-iso-20022-pain001-message)
+1. [Create a ISO 20022 PAIN.001 message](https://github.com/phoughton/pyiso20022/blob/main/README.md#create-a-iso-20022-pain001-message)
+1. [Create a ISO 20022 PACS.008 message](https://github.com/phoughton/pyiso20022/blob/main/README.md#create-a-iso-20022-pacs008-message)
 
 
 # PYISO20022 an ISO 20022 Message Generator and Parser
@@ -51,7 +52,7 @@ or...
 
 ## Create a ISO 20022 PAIN.001 message
 
-Uee this code to create a PAyment INitiation message. We've used PAIN.001.001.08 but other versions are available. 
+Use this code to create a `PA`yment `IN`itiation message. We've used `pain.001.001.08` but other versions are available. 
 
 It will create a file called: `my_pain_001_001_08_from_code.xml`
 
