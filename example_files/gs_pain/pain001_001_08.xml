@@ -26,7 +26,7 @@
             <Dbtr>
                 <Nm>UFXQHBE</Nm>
                 <PstlAdr>
-                    <StrtNm>LCPM LUEZOF</StrtNm>
+                    <StrtNm>DBTR LUEZOF</StrtNm>
                     <BldgNb>88</BldgNb>
                     <PstCd>052</PstCd>
                     <TwnNm>VVR MBDB</TwnNm>
@@ -66,9 +66,9 @@
                 <Cdtr>
                     <Nm>Creditor account name</Nm>
                     <PstlAdr>
-                        <StrtNm>LCPM LUEZOF</StrtNm>
-                        <BldgNb>88</BldgNb>
-                        <PstCd>052</PstCd>
+                        <StrtNm>CDTR LUEZOF</StrtNm>
+                        <BldgNb>99</BldgNb>
+                        <PstCd>E1 9TY</PstCd>
                         <TwnNm>VVR MBDB</TwnNm>
                         <Ctry>QA</Ctry>
                     </PstlAdr>
