@@ -15,7 +15,7 @@ def parse_element(element, parent_name=''):
             data_dict.update(parse_element(child, child_name))
         else:
             data_dict[child_name] = child.text
-            
+
     modified_dict = {modify_key(k): v for k, v in data_dict.items()}
 
     return modified_dict
