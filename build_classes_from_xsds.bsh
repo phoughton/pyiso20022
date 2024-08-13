@@ -16,7 +16,15 @@ generate_xsdata() {
     done
 }
 
-rm -rf pyiso20022/
+REMOVE_DIRS=("pacs" "head" "pain" "camt")
+
+for a_dir in "${REMOVE_DIRS[@]}"
+do
+    rm -rf "pyiso20022/${a_dir}"
+done
+
+# rm -rf pyiso20022/
+
 echo "# Supported message types" > supported_msg_types.md
 
 generate_xsdata "pacs" "xsd/payments_clearing_and_settlement"
@@ -26,3 +34,6 @@ generate_xsdata "camt" "xsd/cash_management"
 wait
 cat supported_msg_types.md | sort -n | uniq > supported_msg_types_final.md
 rm supported_msg_types.md
+
+mkdir -p pyiso20022/tools
+cp -r tools/*.py pyiso20022/tools
