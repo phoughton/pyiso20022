@@ -134,11 +134,11 @@ ttylog
 
 *.xml
 pacs_008_001_08/
-pacs/
-head/
-camt/
-pain/
-pyiso20022/
+pyiso20022/pacs/
+pyiso20022/head/
+pyiso20022/camt/
+pyiso20022/pain/
+pyiso20022/*.py
 
 temp/
 

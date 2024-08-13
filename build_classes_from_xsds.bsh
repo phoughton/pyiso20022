@@ -23,7 +23,6 @@ do
     rm -rf "pyiso20022/${a_dir}"
 done
 
-# rm -rf pyiso20022/
 
 echo "# Supported message types" > supported_msg_types.md
 
@@ -35,5 +34,3 @@ wait
 cat supported_msg_types.md | sort -n | uniq > supported_msg_types_final.md
 rm supported_msg_types.md
 
-mkdir -p pyiso20022/tools
-cp -r tools/*.py pyiso20022/tools
