@@ -311,6 +311,9 @@ isotools.camt053_to_excel("my_camt053_file.xml",
                           "my_camt053_excel_file.xlsx")
 ```
 
+And you'll get something like this when you open your Excel file:
+
+<iMG SRC="https://github.com/phoughton/pyiso20022/raw/main/docs/pyiso20022_tools_camt053_excel.png?raw=true" WIDTH=800>
 
 
 
