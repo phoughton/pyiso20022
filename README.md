@@ -296,10 +296,28 @@ with open("my_pacs_008_from_code.xml", "w") as xml_file:
 
 ```
 
-### Message types?
-Currently supports PACS, PAIN and CAMT messages as well as HEAD (header documents for the messages).
+## Convert a CAMT.053 into an Excel file?
+
+You can convert the entries in a CAMT.053 into a Excel file using the tools.
+
+Currently this will extract the `Ntry` list and take all details and place them into seperate columns. It will also translate the element names intro their more meaningful English versions.
+
+Use it like this:
+
+```python
+import pyiso20022.tools as isotools
+
+isotools.camt053_to_excel("my_camt053_file.xml",
+                          "my_camt053_excel_file.xlsx")
+```
 
 
-### Source of truth?
+
+
+## Message types?
+Currently pyiso20022 supports PACS, PAIN and CAMT messages as well as HEAD (header documents for the messages).
+
+
+## Source of truth?
 
 If you want the original source of truth for all things ISO 20022 schema related then check out [www.iso20022.org](https://www.iso20022.org/)
