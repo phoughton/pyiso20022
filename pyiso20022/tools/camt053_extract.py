@@ -2853,16 +2853,17 @@ mnemonics = {
 
 def _iso20022_term_translator(mnemonic):
     new_name = ""
-    list_of_mnems = re.split(r'(?<=[a-z])(?=[A-Z])', mnemonic)
+    list_of_mnems = re.split(r'(?<=[a-z\/ ])(?=[ \/A-Z])', mnemonic)
     for key in list_of_mnems:
         new_name += mnemonics.get(key, key)
         new_name += " "
 
-    return new_name.strip()
+    squashed = ' '.join(new_name.split())
+
+    return squashed.strip()
 
 
-def _modify_key(key, translate=True):
-    clean_mnems = key.split('}')[-1]
+def _modify_key(clean_mnems, translate=True):
     if translate:
         clean_mnems = _iso20022_term_translator(clean_mnems)
     return clean_mnems
@@ -2871,7 +2872,7 @@ def _modify_key(key, translate=True):
 def _parse_element(element, parent_name='', translate=True):
     data_dict = {}
     for child in element:
-        child_name = f"{parent_name}_{child.tag}" if parent_name else child.tag
+        child_name = f"{parent_name} / {child.tag}" if parent_name else child.tag
 
         if len(child):
             data_dict.update(_parse_element(child,
@@ -2894,7 +2895,15 @@ def camt053_to_df(xml_fname, translate=True):
 
     root = etree.fromstring(xml_data)
     data = []
-    elements = root.xpath('//*[local-name()="Ntry"]')
+
+    for elem in root.getiterator():
+        if not hasattr(elem.tag, 'find'):
+            continue
+        ind = elem.tag.find('}')
+        if ind > 0:
+            elem.tag = elem.tag[ind+1:]  
+
+    elements = root.xpath('//Ntry')
 
     for record in elements:
         record_data = _parse_element(record, translate=translate)

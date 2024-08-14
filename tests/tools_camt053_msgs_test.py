@@ -11,7 +11,7 @@ def test_pandas_df_camt053_001_02(entry_reference, msg_id):
 
     df = camt053_to_df("example_files/gs_camt/camt053_001_02.xml") 
 
-    result = df[df['Entry Reference'] == entry_reference]["Message Identification"]
+    result = df[df['Entry Reference'] == entry_reference]["Entry Details / Transaction Details / References / Message Identification"]
 
     assert result.values[0] == msg_id
 
@@ -30,5 +30,5 @@ def test_excel_camt053_001_02(entry_reference, msg_id):
 
     tmp_file.close()
 
-    result = df[df['Entry Reference'].astype(str) == str(entry_reference)]["Message Identification"]
+    result = df[df['Entry Reference'].astype(str) == str(entry_reference)]["Entry Details / Transaction Details / References / Message Identification"]
     assert result.values[0] == msg_id
