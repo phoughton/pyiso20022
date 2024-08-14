@@ -298,9 +298,9 @@ with open("my_pacs_008_from_code.xml", "w") as xml_file:
 
 ## Convert a CAMT.053 into an Excel file?
 
-You can convert the entries in a CAMT.053 into a Excel file using the tools.
+You can convert the entries in a CAMT.053 into a Excel file using the tools in pyiso20022.
 
-Currently this will extract the `Ntry` list and take all details and place them into seperate columns. It will also translate the element names intro their more meaningful English versions.
+Currently this will extract the `Ntry` list and take all details and place them into seperate columns. It will also translate the element names into their more meaningful English versions.
 
 Use it like this:
 
