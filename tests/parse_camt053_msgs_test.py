@@ -6,7 +6,7 @@ from pyiso20022.camt.camt_053_001_02 import *
 @pytest.mark.parametrize("expected_acc_id", [
         ("DD01100056869")
     ])
-def test_parse_camt052_001_02(expected_acc_id):
+def test_parse_camt053_001_02(expected_acc_id):
 
     parser = XmlParser()
 

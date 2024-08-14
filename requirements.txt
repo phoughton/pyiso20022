@@ -1,2 +1,4 @@
 pytest
 xsdata[cli,lxml,soap]
+pandas
+openpyxl
