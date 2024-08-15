@@ -15,8 +15,7 @@ def create_pain001_001_008():
                                             ))
 
     initg_pty = PartyIdentification43(nm="TXB Test Account",
-                                    id=initg_pty__id)
-
+                                      id=initg_pty__id)
 
     grp_hdr = GroupHeader48(msg_id="test-160620",
                             cre_dt_tm="2019-12-03T13:01:00+00:00",
@@ -115,8 +114,9 @@ def test_parse_pain001_001_008(expected_dbtr_postcode, expected_cdtr_postcode):
 
         doc: Document = parser.parse(temp_file, Document, )
 
-        dbtr_post_code = doc.cstmr_cdt_trf_initn.pmt_inf[0].dbtr.pstl_adr.pst_cd
-        cdtr_post_code = doc.cstmr_cdt_trf_initn.pmt_inf[0].cdt_trf_tx_inf[0].cdtr.pstl_adr.pst_cd
+        pmt_inf = doc.cstmr_cdt_trf_initn.pmt_inf[0]
+        dbtr_post_code = pmt_inf.dbtr.pstl_adr.pst_cd
+        cdtr_post_code = pmt_inf.cdt_trf_tx_inf[0].cdtr.pstl_adr.pst_cd
 
     assert dbtr_post_code == expected_dbtr_postcode
     assert cdtr_post_code == expected_cdtr_postcode

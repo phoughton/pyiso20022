@@ -6,13 +6,14 @@ Table of Contents: _(Links to this page on GitHub)_
 1. [Parse an ISO 20022 PAIN.001 message](https://github.com/phoughton/pyiso20022/blob/main/README.md#parse-an-iso-20022-pain001-message)
 1. [Create a ISO 20022 PAIN.001 message](https://github.com/phoughton/pyiso20022/blob/main/README.md#create-a-iso-20022-pain001-message)
 1. [Create a ISO 20022 PACS.008 message](https://github.com/phoughton/pyiso20022/blob/main/README.md#create-a-iso-20022-pacs008-message)
+1. [Convert a CAMT.053 into an Excel file](https://github.com/phoughton/pyiso20022/blob/main/README.md#convert-a-camt053-into-an-excel-file)
 
 
 # PYISO20022 an ISO 20022 Message Generator and Parser
 
 A package of classes to support payment, financial, securities & accounting message generation (for ISO 20022 messages).
 
-These are the type of payments messages used in payment schemes such as FedNow, TARGET2, CHAPS, CBPR+, MEPS+ and other SWIFT/Wire Transfer style payments etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT.056 or PAIN.001).
+These are the type of payments messages used in payment schemes such as FedNow, FedWire, TARGET2, CHAPS, CBPR+, MEPS+ and other SWIFT/Wire Transfer style payments etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT.056 or PAIN.001 or ADMI.004 etc).
 
 You might use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats _Payment Initiation_) messages.
 
@@ -296,7 +297,7 @@ with open("my_pacs_008_from_code.xml", "w") as xml_file:
 
 ```
 
-## Convert a CAMT.053 into an Excel file?
+## Convert a CAMT.053 into an Excel file
 
 You can convert the entries in a CAMT.053 into a Excel file using the tools in pyiso20022.
 
@@ -318,7 +319,7 @@ And you'll get something like this when you open your Excel file:
 
 
 ## Message types?
-Currently pyiso20022 supports PACS, PAIN and CAMT messages as well as HEAD (header documents for the messages).
+Currently pyiso20022 supports PACS, PAIN, ADMI and CAMT messages as well as HEAD (header documents for the messages).
 
 
 ## Source of truth?

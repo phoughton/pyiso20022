@@ -1,4 +1,12 @@
 # Supported message types
+- admi.admi_002_001_01
+- admi.admi_004_001_02
+- admi.admi_006_001_01
+- admi.admi_007_001_01
+- admi.admi_009_001_02
+- admi.admi_010_001_02
+- admi.admi_011_001_01
+- admi.admi_017_001_01
 - camt.camt_025_001_08
 - camt.camt_026_001_01
 - camt.camt_026_001_03
@@ -42,6 +50,7 @@
 - camt.camt_053_001_09
 - camt.camt_053_001_10
 - camt.camt_053_001_11
+- camt.camt_053_001_12
 - camt.camt_054_001_01
 - camt.camt_054_001_02
 - camt.camt_054_001_03
@@ -69,6 +78,7 @@
 - camt.camt_060_001_04
 - camt.camt_060_001_05
 - camt.camt_060_001_06
+- camt.camt_060_001_07
 - camt.camt_110_001_01
 - camt.camt_111_001_01
 - head.head_001_001_02
