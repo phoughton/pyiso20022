@@ -36,3 +36,8 @@ wait
 cat supported_msg_types.md | sort -n | uniq > supported_msg_types_final.md
 rm supported_msg_types.md
 
+# Help pdoc with the docs
+echo '"""' > pyiso20022/__init__.py
+cat README.md >> pyiso20022/__init__.py
+echo '"""' >> pyiso20022/__init__.py
+

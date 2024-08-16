@@ -1,14 +1,5 @@
 <iMG SRC="https://github.com/phoughton/pyiso20022/raw/main/docs/logo_pyiso20022.png?raw=true" WIDTH=400>
 
-
-Table of Contents: _(Links to this page on GitHub)_
-1. [PYISO20022 - an ISO 20022 Message Generator and Parser](https://github.com/phoughton/pyiso20022/blob/main/README.md#pyiso20022-an-iso-20022-message-generator-and-parser)
-1. [Parse an ISO 20022 PAIN.001 message](https://github.com/phoughton/pyiso20022/blob/main/README.md#parse-an-iso-20022-pain001-message)
-1. [Create a ISO 20022 PAIN.001 message](https://github.com/phoughton/pyiso20022/blob/main/README.md#create-a-iso-20022-pain001-message)
-1. [Create a ISO 20022 PACS.008 message](https://github.com/phoughton/pyiso20022/blob/main/README.md#create-a-iso-20022-pacs008-message)
-1. [Convert a CAMT.053 into an Excel file](https://github.com/phoughton/pyiso20022/blob/main/README.md#convert-a-camt053-into-an-excel-file)
-
-
 # PYISO20022 an ISO 20022 Message Generator and Parser
 
 A package of classes to support payment, financial, securities & accounting message generation (for ISO 20022 messages).
