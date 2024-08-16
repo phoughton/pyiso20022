@@ -19,7 +19,15 @@
 - camt.camt_026_001_10
 - camt.camt_028_001_01
 - camt.camt_028_001_03
+- camt.camt_028_001_04
+- camt.camt_028_001_05
+- camt.camt_028_001_06
+- camt.camt_028_001_07
+- camt.camt_028_001_08
+- camt.camt_028_001_09
+- camt.camt_028_001_10
 - camt.camt_028_001_11
+- camt.camt_028_001_12
 - camt.camt_029_001_01
 - camt.camt_029_001_03
 - camt.camt_029_001_04
@@ -99,7 +107,9 @@
 - camt.camt_060_001_07
 - camt.camt_110_001_01
 - camt.camt_111_001_01
+- head.head_001_001_01
 - head.head_001_001_02
+- head.head_001_001_03
 - head.head_001_001_04
 - pacs.pacs_002_001_02
 - pacs.pacs_002_001_03
@@ -157,6 +167,7 @@
 - pacs.pacs_008_001_08
 - pacs.pacs_008_001_09
 - pacs.pacs_008_001_10
+- pacs.pacs_008_001_11
 - pacs.pacs_008_001_12
 - pacs.pacs_009_001_01
 - pacs.pacs_009_001_02
