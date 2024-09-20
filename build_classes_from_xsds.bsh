@@ -31,13 +31,14 @@ generate_xsdata "head" "xsd/business_application_header"
 generate_xsdata "pain" "xsd/payments_initiation"
 generate_xsdata "camt" "xsd/cash_management"
 generate_xsdata "admi" "xsd/administration"
+generate_xsdata "remt" "xsd/remittance"
 
 wait
 cat supported_msg_types.md | sort -n | uniq > supported_msg_types_final.md
 rm supported_msg_types.md
 
 # Help pdoc with the docs
-echo '"""' > pyiso20022/__init__.py
-cat README.md >> pyiso20022/__init__.py
-echo '"""' >> pyiso20022/__init__.py
+# echo '"""' > pyiso20022/__init__.py
+# cat README.md >> pyiso20022/__init__.py
+# echo '"""' >> pyiso20022/__init__.py
 

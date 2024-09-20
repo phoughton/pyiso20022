@@ -4,7 +4,7 @@
 
 A package of classes to support payment, financial, securities & accounting message generation (for ISO 20022 messages).
 
-These are the type of payments messages used in payment schemes such as FedNow, FedWire, TARGET2, CHAPS, CBPR+, MEPS+ and other SWIFT/Wire Transfer style payments etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT.056 or PAIN.001 or ADMI.004 etc).
+These are the type of payments messages used in payment schemes such as FedNow, FedWire, TARGET2, CHAPS, CBPR+, MEPS+ and other SWIFT/Wire Transfer style payments etc. You may hear them refered to as PACS messages (but there are others types as well, like CAMT.056 or PAIN.001, REMT.001 or ADMI.004 etc).
 
 You might use these messages if you intitate payments from your company into a larger financial institution, in this scenario you will be generating PAIN (thats _Payment Initiation_) messages.
 
