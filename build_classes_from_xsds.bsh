@@ -16,7 +16,7 @@ generate_xsdata() {
     done
 }
 
-REMOVE_DIRS=("pacs" "head" "pain" "camt" "admi")
+REMOVE_DIRS=("pacs" "head" "pain" "camt" "admi" "remt")
 
 for a_dir in "${REMOVE_DIRS[@]}"
 do
