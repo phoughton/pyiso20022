@@ -139,9 +139,11 @@ pyiso20022/head/
 pyiso20022/camt/
 pyiso20022/pain/
 pyiso20022/admi/
+pyiso20022/remt/
 
 pyiso20022/*.py
 
 temp/
 
 *.xlsx
+.tmux.conf
