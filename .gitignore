@@ -145,5 +145,6 @@ pyiso20022/*.py
 
 temp/
 
+# Ignore test files and terminal config etc
 *.xlsx
 .tmux.conf
