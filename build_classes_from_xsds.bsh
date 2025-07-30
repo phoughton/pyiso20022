@@ -16,7 +16,7 @@ generate_xsdata() {
     done
 }
 
-REMOVE_DIRS=("pacs" "head" "pain" "camt" "admi" "remt")
+REMOVE_DIRS=("pacs" "head" "pain" "camt" "admi" "remt" "colr")
 
 for a_dir in "${REMOVE_DIRS[@]}"
 do
@@ -32,6 +32,8 @@ generate_xsdata "pain" "xsd/payments_initiation"
 generate_xsdata "camt" "xsd/cash_management"
 generate_xsdata "admi" "xsd/administration"
 generate_xsdata "remt" "xsd/remittance"
+generate_xsdata "colr" "xsd/collateral_management"
+
 
 wait
 cat supported_msg_types.md | sort -n | uniq > supported_msg_types_final.md
