@@ -180,6 +180,7 @@
 - pacs.pacs_002_001_12
 - pacs.pacs_002_001_13
 - pacs.pacs_002_001_14
+- pacs.pacs_002_001_15
 - pacs.pacs_003_001_01
 - pacs.pacs_003_001_02
 - pacs.pacs_003_001_03
@@ -201,6 +202,7 @@
 - pacs.pacs_004_001_10
 - pacs.pacs_004_001_11
 - pacs.pacs_004_001_13
+- pacs.pacs_004_001_14
 - pacs.pacs_007_001_01
 - pacs.pacs_007_001_02
 - pacs.pacs_007_001_03
@@ -225,6 +227,7 @@
 - pacs.pacs_008_001_10
 - pacs.pacs_008_001_11
 - pacs.pacs_008_001_12
+- pacs.pacs_008_001_13
 - pacs.pacs_009_001_01
 - pacs.pacs_009_001_02
 - pacs.pacs_009_001_03
@@ -236,6 +239,7 @@
 - pacs.pacs_009_001_09
 - pacs.pacs_009_001_10
 - pacs.pacs_009_001_11
+- pacs.pacs_009_001_12
 - pacs.pacs_010_001_02
 - pacs.pacs_010_001_03
 - pacs.pacs_010_001_06
@@ -258,6 +262,7 @@
 - pain.pain_001_001_09
 - pain.pain_001_001_10
 - pain.pain_001_001_11
+- pain.pain_001_001_12
 - pain.pain_002_001_01
 - pain.pain_002_001_02
 - pain.pain_002_001_03
@@ -270,6 +275,8 @@
 - pain.pain_002_001_10
 - pain.pain_002_001_11
 - pain.pain_002_001_12
+- pain.pain_002_001_13
+- pain.pain_002_001_14
 - pain.pain_007_001_01
 - pain.pain_007_001_02
 - pain.pain_007_001_03
