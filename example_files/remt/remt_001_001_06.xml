@@ -1,90 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Document xmlns="urn:iso:std:iso:20022:tech:xsd:remt.001.001.06">
-    <RmtAdvc>
-        <GrpHdr>
-            <MsgId>20241001Ex1234</MsgId>
-            <CreDtTm>2024-10-01T09:00:00</CreDtTm>
-            <InitgPty>
-                <Id>
-                    <OrgId>
-                        <Othr>
-                            <Id>623456</Id>
-                            <SchmeNm>
-                                <Prtry>Exchange Framework</Prtry>
-                            </SchmeNm>
-                        </Othr>
-                    </OrgId>
-                </Id>
-            </InitgPty>
-            <MsgRcpt>
-                <Id>
-                    <OrgId>
-                        <Othr>
-                            <Id>654326</Id>
-                            <SchmeNm>
-                                <Prtry>Exchange Framework</Prtry>
-                            </SchmeNm>
-                        </Othr>
-                    </OrgId>
-                </Id>
-            </MsgRcpt>
-        </GrpHdr>
-        <RmtInf>
-            <RmtId>20240427_121000322_1754_321</RmtId>
-            <Strd>
-                <RfrdDocInf>
-                    <Tp>
-                        <CdOrPrtry>
-                            <Cd>CINV</Cd>
-                        </CdOrPrtry>
-                    </Tp>
-                    <Nb>684528</Nb>
-                    <RltdDt>2022-06-10</RltdDt>
-                </RfrdDocInf>
-                <RfrdDocAmt>
-                    <RmtAmtAndTp>
-                        <Amt Ccy="USD">3916.11</Amt>
-                    </RmtAmtAndTp>
-                </RfrdDocAmt>
-            </Strd>
-            <Strd>
-                <RfrdDocInf>
-                    <Tp>
-                        <CdOrPrtry>
-                            <Cd>CINV</Cd>
-                        </CdOrPrtry>
-                    </Tp>
-                    <Nb>683529</Nb>
-                    <RltdDt>2022-06-10</RltdDt>
-                </RfrdDocInf>
-                <RfrdDocAmt>
-                    <RmtAmtAndTp>
-                        <Amt Ccy="USD">3916.99</Amt>
-                    </RmtAmtAndTp>
-                </RfrdDocAmt>
-            </Strd>
-            <OrgnlPmtInf>
-                <Refs>
-                    <EndToEndId>Linking ID Example 1</EndToEndId>
-                </Refs>
-                <PmtTpInf>
-                    <LclInstrm>
-                        <Cd>ARC</Cd>
-                    </LclInstrm>
-                </PmtTpInf>
-                <Amt>
-                    <InstdAmt Ccy="USD">7845.61</InstdAmt>
-                </Amt>
-                <ReqdExctnDt>
-                    <Dt>2022-07-10</Dt>
-                </ReqdExctnDt>
-                <Dbtr>
-                    <Nm>Payer McTest1</Nm>
-                </Dbtr>
-                <Cdtr>
-                    <Nm>Payee McTest1</Nm>
-                </Cdtr>
-            </OrgnlPmtInf>
-        </RmtInf>
-    </RmtAdvc>
+  <RmtAdvc>
+    <GrpHdr>
+      <MsgId>20241001Ex1234</MsgId>
+      <CreDtTm>2024-10-01T09:00:00</CreDtTm>
+      <InitgPty>
+        <Id>
+          <OrgId>
+            <Othr>
+              <Id>623456</Id>
+              <SchmeNm>
+                <Prtry>Exchange Framework</Prtry>
+              </SchmeNm>
+            </Othr>
+          </OrgId>
+        </Id>
+      </InitgPty>
+      <MsgRcpt>
+        <Id>
+          <OrgId>
+            <Othr>
+              <Id>654326</Id>
+              <SchmeNm>
+                <Prtry>Exchange Framework</Prtry>
+              </SchmeNm>
+            </Othr>
+          </OrgId>
+        </Id>
+      </MsgRcpt>
+    </GrpHdr>
+
+    <RmtInf>
+      <RmtId>20240427_121000322_1754_321</RmtId>
+
+      <Strd>
+        <RfrdDocInf>
+          <Tp>
+            <CdOrPrtry>
+              <Cd>CINV</Cd>
+            </CdOrPrtry>
+          </Tp>
+          <Nb>684528</Nb>
+          <RltdDt>
+            <Tp>
+              <Prtry>DocumentDate</Prtry>
+            </Tp>
+            <Dt>2022-06-10</Dt>
+          </RltdDt>
+        </RfrdDocInf>
+        <RfrdDocAmt>
+          <RmtAmtAndTp>
+            <Tp>
+              <Prtry>InvoiceAmount</Prtry>
+            </Tp>
+            <Amt Ccy="USD">3916.11</Amt>
+          </RmtAmtAndTp>
+        </RfrdDocAmt>
+      </Strd>
+
+      <Strd>
+        <RfrdDocInf>
+          <Tp>
+            <CdOrPrtry>
+              <Cd>CINV</Cd>
+            </CdOrPrtry>
+          </Tp>
+          <Nb>683529</Nb>
+          <RltdDt>
+            <Tp>
+              <Prtry>DocumentDate</Prtry>
+            </Tp>
+            <Dt>2022-06-10</Dt>
+          </RltdDt>
+        </RfrdDocInf>
+        <RfrdDocAmt>
+          <RmtAmtAndTp>
+            <Tp>
+              <Prtry>InvoiceAmount</Prtry>
+            </Tp>
+            <Amt Ccy="USD">3916.99</Amt>
+          </RmtAmtAndTp>
+        </RfrdDocAmt>
+      </Strd>
+
+      <OrgnlPmtInf>
+        <Refs>
+          <EndToEndId>Linking ID Example 1</EndToEndId>
+        </Refs>
+        <PmtTpInf>
+          <LclInstrm>
+            <Cd>ARC</Cd>
+          </LclInstrm>
+        </PmtTpInf>
+        <Amt>
+          <InstdAmt Ccy="USD">7845.61</InstdAmt>
+        </Amt>
+        <ReqdExctnDt>
+          <Dt>2022-07-10</Dt>
+        </ReqdExctnDt>
+        <Dbtr>
+          <Nm>Payer McTest1</Nm>
+        </Dbtr>
+        <Cdtr>
+          <Nm>Payee McTest1</Nm>
+        </Cdtr>
+      </OrgnlPmtInf>
+
+    </RmtInf>
+  </RmtAdvc>
 </Document>
